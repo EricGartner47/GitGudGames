@@ -53,3 +53,21 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+
+.nav-footer-header{
+    font-weight: 700;
+    color: black;
+    margin: 2px 0 8px 15px;
+}
+
+#splashpage-footer {
+    margin-top: 10px;
+    background-color: #fff;
+    border-top: 1px solid #e8e8e8;
+    padding: 50px 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: flex;
+}

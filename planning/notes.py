@@ -11,7 +11,7 @@ white
 
 brown-orange: #9a3c0c
 
-dirty-brown: #9a3c0c
+dirty-brown: #946224
 
 font-family: 'Bangers', cursive;
 
