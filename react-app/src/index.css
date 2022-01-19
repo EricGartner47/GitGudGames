@@ -1,3 +1,23 @@
 body {
     font-family: 'Press Start 2P', cursive;
+    background-color: #ffa542;
+}
+
+input, textarea {
+    cursor: text;
+    word-wrap: break-word;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    outline:  none;
+}
+
+button {
+    background-color: #e75a10;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #9a3c0c;
+}
+
+button:active{
+    background-color: #9a3c0c;
 }
