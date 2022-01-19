@@ -1,0 +1,18 @@
+#homepage-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#new-account-box {
+    display: block;
+    width: 250px;
+    margin: 14px 6px 0 0;
+    font-family: 'Press Start 2P', cursive;
+    float: right;
+    position: sticky;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+}
