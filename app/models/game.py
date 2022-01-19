@@ -3,7 +3,7 @@ from sqlalchemy.sql import func
 
 
 class Game(db.Model):
-    __tablename__ = 'games'
+    __tablename__ = "games"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
@@ -15,8 +15,8 @@ class Game(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     created_at = db.Column(db.DateTime, server_default=func.now())
     updated_at = db.Column(db.DateTime, server_default=func.now())
-    shelf = db.relationship("Shelf", back_populates="games")
-    user = db.relationship("User", back_populates="games")
+    shelves = db.relationship("Shelf", back_populates="games")
+    users = db.relationship("User", back_populates="games")
 
     def to_dict(self):
         if self.shelf:
