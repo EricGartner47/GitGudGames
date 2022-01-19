@@ -1,6 +1,6 @@
 from ast import Str
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, DateField, SubmitField, IntegerField
+from wtforms import StringField, BooleanField, SelectField, IntegerField
 from wtforms.validators import DataRequired, Optional
 
 class GameForm(FlaskForm):
@@ -9,5 +9,5 @@ class GameForm(FlaskForm):
     notes = StringField('notes')
     rating = IntegerField('rating', validators=[Optional()])
     completed = BooleanField('completed')
-    genre = StringField('genre', validators=[Optional()])
+    genre = SelectField('genre', choices=[('Shooter'), ('RPG'), ('Adventure'), ('Horror'), ('Platformer'), ('Sandbox'), ('Puzzler'), ('Strategy')], validators=[Optional()])
     shelf_id = IntegerField('shelf_id', validators=[Optional()])

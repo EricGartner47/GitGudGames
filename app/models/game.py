@@ -16,7 +16,7 @@ class Game(db.Model):
     created_at = db.Column(db.DateTime, server_default=func.now())
     updated_at = db.Column(db.DateTime, server_default=func.now())
     shelf = db.relationship("Shelf", back_populates="games")
-    user = db.relationship("User", back_populates="Games")
+    user = db.relationship("User", back_populates="games")
 
     def to_dict(self):
         if self.shelf:
