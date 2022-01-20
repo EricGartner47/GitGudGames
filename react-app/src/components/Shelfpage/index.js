@@ -2,6 +2,7 @@ import React, {useEffect, useState}from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, NavLink} from "react-router-dom";
 import { loadShelves } from "../../store/shelves";
+import ShelfFormNew from "../ShelfFormNew";
 import './Shelfpage.css'
 
 const Shelfpage = () => {
@@ -27,6 +28,7 @@ const Shelfpage = () => {
                             <li key={shelf.id}>{shelf.title}</li>
                         )
                     })}
+                    <ShelfFormNew />
                 </div>
             </div>
         )

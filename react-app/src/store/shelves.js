@@ -25,7 +25,7 @@ export const loadShelves = user => async dispatch => {
 }
 
 export const createShelf = payload => async dispatch => {
-    const res = await fetch(`/api/shelves/${payload.user_id}`, {
+    const res = await fetch(`/api/shelves/${payload.user_id}/`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
