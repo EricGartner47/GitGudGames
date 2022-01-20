@@ -1,10 +1,10 @@
-#homepage-nav {
+#splashpage-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#homepage-nav a:link, a:visited{
+#splashpage-nav a:link, a:visited{
     text-decoration: none;
     color: #9a3c0c;
 }

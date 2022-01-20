@@ -5,8 +5,8 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <nav id="homepage-nav">
-      <div id='homepage-logo'>
+    <nav id="splashpage-nav">
+      <div id='splashpage-logo'>
         <NavLink to="/" exact={true} activeClassName='active' className='gitgud-logo'>
           <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
         </NavLink>

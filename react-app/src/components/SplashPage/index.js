@@ -38,6 +38,5 @@ const SplashPage = () => {
     )
 }
 
-//test
 
 export default SplashPage;
