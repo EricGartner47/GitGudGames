@@ -8,7 +8,7 @@ function DemoLogin() {
 
     const onSubmit = async e => {
         e.preventDefault();
-        const email = "demo@demoemail.com"
+        const email = "demo@aa.io"
         const password = "password"
         await dispatch(login(email, password));
     }
