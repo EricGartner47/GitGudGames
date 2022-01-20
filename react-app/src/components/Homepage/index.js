@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
-import { Redirect, NavLink } from 'react-router-dom';
-import Shelfpage from '../Shelfpage';
+import { Redirect, NavLink, Link } from 'react-router-dom';
 import Userbar from '../Userbar';
 import './Homepage.css'
 
@@ -18,7 +17,7 @@ const Homepage = () => {
                         </NavLink>
                     </div>
                     <div>
-                        
+                        <Link to="/app/shelves">My Shelves</Link>
                     </div>
                     <div>
                         <Userbar />

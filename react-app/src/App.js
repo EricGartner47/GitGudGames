@@ -6,6 +6,7 @@ import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/NavBar';
 import Homepage from './components/Homepage';
 import SplashPage from './components/SplashPage';
+import Shelfpage from './components/Shelfpage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -43,6 +44,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/app' exact={true}>
           <Homepage />
+        </Route>
+        <Route path='/app/shelves' exact={true}>
+          <Shelfpage />
         </Route>
         <Route path='/' exact={true} >
           <NavBar />
