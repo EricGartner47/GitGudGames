@@ -1,4 +1,6 @@
 const LOAD_SHELVES = 'shelf/LOAD_SHELVES'
+const NEW_SHELF = 'shelf/NEW_SHELF'
+
 
 const getShelf = (user, shelves) => {
     return {
@@ -8,10 +10,30 @@ const getShelf = (user, shelves) => {
     }
 }
 
+const addShelf = (shelf) => {
+    return {
+        type: NEW_SHELF,
+        shelf
+    }
+}
+
 export const loadShelves = user => async dispatch => {
     const res = await fetch(`/api/shelves/${user.id}`)
     const data = await res.json();
     dispatch(getShelf(user, data))
+    return data;
+}
+
+export const createShelf = payload => async dispatch => {
+    const res = await fetch(`/api/shelves/${payload.user_id}`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+    const data = await res.json();
+    dispatch(addShelf(data));
     return data;
 }
 
@@ -26,7 +48,10 @@ export const shelfReducer = (state = initialState, action) => {
             allShelves.forEach(shelf => {
                 shelves[shelf.id] = shelf
             })
-        return {...state, ...shelves}
+            return {...state, ...shelves}
+        case NEW_SHELF:
+            newState[action.shelf.id] = action.shelf
+            return newState
         default:
             return state;
     }

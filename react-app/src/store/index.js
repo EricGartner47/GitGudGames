@@ -1,9 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
+import { shelfReducer } from './shelves';
 
 const rootReducer = combineReducers({
   session,
+  shelves: shelfReducer,
 });
 
 
