@@ -36,7 +36,7 @@ def get_all_shelves(id):
     results = Shelf.query.filter(Shelf.user_id == user.id).all()
     return {'shelves': [shelf.to_dict() for shelf in results]}
 
-@user_routes.route('/<int:id/shelves', methods=['POST'])
+@user_routes.route('/<int:id>/shelves', methods=['POST'])
 @login_required
 def create_shelf(id):
     user = User.query.get(id)
@@ -58,7 +58,7 @@ def get_all_games(id):
     results = Game.query.filter(Game.user_id == user.id).all()
     return {'games': [game.to_dict() for game in results]}
 
-@user_routes.route('/<int:id/games', methods=['POST'])
+@user_routes.route('/<int:id>/games', methods=['POST'])
 @login_required
 def create_game(id):
     user = User.query.get(id)
