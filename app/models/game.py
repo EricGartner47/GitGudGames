@@ -19,20 +19,20 @@ class Game(db.Model):
     users = db.relationship("User", back_populates="games")
 
     def to_dict(self):
-        if self.shelf:
-            return {
-                'id': self.id,
-                'title': self.title,
-                'notes': self.notes,
-                'rating': self.rating,
-                'completed': self.completed,
-                'genre': self.genre,
-                'shelf_id': self.shelf_id,
-                'user_id': self.user_id,
-                'created_at': self.created_at,
-                'updated_at': self.updated_at,
-                'shelf': self.shelf.to_dictionary()
-            }
+        # if self.shelf:
+        #     return {
+        #         'id': self.id,
+        #         'title': self.title,
+        #         'notes': self.notes,
+        #         'rating': self.rating,
+        #         'completed': self.completed,
+        #         'genre': self.genre,
+        #         'shelf_id': self.shelf_id,
+        #         'user_id': self.user_id,
+        #         'created_at': self.created_at,
+        #         'updated_at': self.updated_at,
+        #         'shelf': self.shelf.to_dictionary()
+        #     }
         return {
             'id': self.id,
             'title': self.title,
