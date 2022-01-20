@@ -6,7 +6,7 @@ body {
 input, textarea {
     cursor: text;
     word-wrap: break-word;
-    border: 1px solid transparent;
+    border: 1px solid #9a3c0c;
     border-radius: 3px;
     outline:  none;
 }
