@@ -4,9 +4,10 @@ import { Redirect } from 'react-router-dom';
 import { deleteShelf } from '../../store/shelves';
 import './ShelfFormRemove.css'
 
-const ShelfFormRemove = () => {
+const ShelfFormRemove = ({shelf}) => {
     const user = useSelector(state => state.session.user);
-    const shelf = useSelector(state => state.shelf)
+    const userShelves = useSelector(state => state.shelf)
+    console.log(shelf)
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([])
 
@@ -31,3 +32,5 @@ const ShelfFormRemove = () => {
         </div>
     )
 }
+
+export default ShelfFormRemove;

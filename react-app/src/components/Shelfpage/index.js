@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Redirect, NavLink} from "react-router-dom";
 import { loadShelves } from "../../store/shelves";
 import ShelfFormNew from "../ShelfFormNew";
+import ShelfFormRemove from "../ShelfFormRemove";
 import './Shelfpage.css'
 
 const Shelfpage = () => {
@@ -27,7 +28,7 @@ const Shelfpage = () => {
                         return (
                             <ul>
                                 <li key={shelf.id}>{shelf.title}</li>
-                                {/* <li key={shelf.id}>{}</li> */}
+                                <ShelfFormRemove shelf={shelf}/>
                             </ul>
                         )
                     })}

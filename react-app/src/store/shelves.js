@@ -26,7 +26,7 @@ const removeShelf = (shelf) => {
 }
 
 export const loadShelves = user => async dispatch => {
-    const res = await fetch(`/api/shelves/${user.id}`)
+    const res = await fetch(`/api/shelves/${user.id}/`)
     const data = await res.json();
     dispatch(getShelf(user, data))
     return data;
@@ -46,7 +46,7 @@ export const createShelf = payload => async dispatch => {
 }
 
 export const deleteShelf = payload => async dispatch => {
-    const res = await fetch(`/api/shelves/${payload.id}`,{
+    const res = await fetch(`/api/shelves/${payload.id}/`,{
         method: 'DELETE'
     })
     if(res.ok) {
