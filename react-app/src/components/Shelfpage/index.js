@@ -25,7 +25,10 @@ const Shelfpage = () => {
                     </NavLink>
                     {shelves.map(shelf => {
                         return (
-                            <li key={shelf.id}>{shelf.title}</li>
+                            <ul>
+                                <li key={shelf.id}>{shelf.title}</li>
+                                {/* <li key={shelf.id}>{}</li> */}
+                            </ul>
                         )
                     })}
                     <ShelfFormNew />
