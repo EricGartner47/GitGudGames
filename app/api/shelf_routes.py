@@ -15,13 +15,14 @@ def validation_errors_to_error_messages(validation_errors):
             errorMessages.append(f'{field} : {error}')
     return errorMessages
 
-#get shelves
+#get all shelves
 @shelf_routes.route('/<int:id>/')
 def get_all_shelves(id):
     user = User.query.get(id)
     results = Shelf.query.filter(Shelf.user_id == user.id).all()
     return {'shelves': [shelf.to_dict() for shelf in results]}
 
+#create a shelf
 @shelf_routes.route('/<int:id>/', methods=['POST'])
 def create_shelf(id):
     user = User.query.get(id)
@@ -35,7 +36,12 @@ def create_shelf(id):
         return shelf.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-
-#Update shelf
+#Update a shelf
 
 #Delete shelf
+@shelf_routes.route('/<int:id>/', methods=['DELETE'])
+def delete_shelf(id):
+    shelf = Shelf.query.get(id)
+    db.session.delete(shelf)
+    db.session.commit()
+    return {'message': 'Successfully Deleted Shelf'}

@@ -35,7 +35,6 @@ const ShelfFormNew = () => {
     }
 
     return (
-        <>
             <div>
                 <form onSubmit={onSubmit}>
                     <h4>Add a shelf</h4>
@@ -59,7 +58,6 @@ const ShelfFormNew = () => {
                     <button type="submit">Add Shelf</button>
                 </form>
             </div>
-        </>
     )
 }
 
