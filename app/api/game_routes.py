@@ -21,3 +21,17 @@ def get_all_games(id):
     user = User.query.get(id)
     results = Game.query.filter(Game.user_id == user.id).all()
     return {'games': [game.to_dict() for game in results]}
+
+#create games
+@game_routes.route('/<int:id>', methods=['POST'])
+def create_game(id):
+    user = User.query.get(id)
+    form = GameForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        game = Game()
+        form.populate_obj(game)
+        db.session.add(game)
+        db.session.commit()
+        return game.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401

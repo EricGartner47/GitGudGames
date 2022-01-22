@@ -15,6 +15,13 @@ export const loadGamesForShelf = user => async dispatch => {
     return data;
 }
 
+export const loadGames = user => async dispatch => {
+    const res = await fetch(`/api/games/${user.id}`)
+    const data = await res.json();
+    dispatch(getGame(user, data))
+    return data; 
+}
+
 const initialState = {}
 
 export const gameReducer = (state = initialState, action) => {
