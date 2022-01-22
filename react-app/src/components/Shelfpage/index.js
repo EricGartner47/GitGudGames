@@ -4,6 +4,7 @@ import { Redirect, NavLink} from "react-router-dom";
 import { loadShelves } from "../../store/shelves";
 import ShelfFormNew from "../ShelfFormNew";
 import ShelfFormRemove from "../ShelfFormRemove";
+import ShelfFormUpdate from "../ShelfFormUpdate";
 import './Shelfpage.css'
 
 const Shelfpage = () => {
@@ -29,6 +30,7 @@ const Shelfpage = () => {
                             <ul>
                                 <li key={shelf.id}>{shelf.title}</li>
                                 <ShelfFormRemove shelf={shelf}/>
+                                <ShelfFormUpdate shelf={shelf}/>
                             </ul>
                         )
                     })}

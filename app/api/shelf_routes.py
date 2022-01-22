@@ -37,6 +37,16 @@ def create_shelf(id):
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 #Update a shelf
+@shelf_routes.route('/<int:id>/', methods=['PUT'])
+def update_shelf(id):
+    shelf = Shelf.query.get(id)
+    form = ShelfForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit:
+        shelf.title = form.title.data
+        db.session.commit()
+        return shelf.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 #Delete shelf
 @shelf_routes.route('/<int:id>/', methods=['DELETE'])

@@ -56,6 +56,19 @@ export const deleteShelf = payload => async dispatch => {
     }
 }
 
+export const updateShelf = payload => async dispatch => {
+    const res = await fetch(`/api/shelves/${payload.id}/`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if(res.ok) {
+        dispatch(addShelf(data))
+        return data
+    }
+}
+
 const initialState = {}
 
 export const shelfReducer = (state = initialState, action) => {
