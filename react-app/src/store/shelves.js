@@ -26,14 +26,14 @@ const removeShelf = (shelf) => {
 }
 
 export const loadShelves = user => async dispatch => {
-    const res = await fetch(`/api/shelves/${user.id}/`)
+    const res = await fetch(`/api/shelves/${user.id}`)
     const data = await res.json();
     dispatch(getShelf(user, data))
     return data;
 }
 
 export const createShelf = payload => async dispatch => {
-    const res = await fetch(`/api/shelves/${payload.user_id}/`, {
+    const res = await fetch(`/api/shelves/${payload.user_id}`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -46,7 +46,7 @@ export const createShelf = payload => async dispatch => {
 }
 
 export const deleteShelf = payload => async dispatch => {
-    const res = await fetch(`/api/shelves/${payload.id}/`,{
+    const res = await fetch(`/api/shelves/${payload.id}`,{
         method: 'DELETE'
     })
     if(res.ok) {
@@ -57,7 +57,7 @@ export const deleteShelf = payload => async dispatch => {
 }
 
 export const updateShelf = payload => async dispatch => {
-    const res = await fetch(`/api/shelves/${payload.id}/`, {
+    const res = await fetch(`/api/shelves/${payload.id}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(payload)
@@ -91,4 +91,3 @@ export const shelfReducer = (state = initialState, action) => {
             return state;
     }
 }
-//test
