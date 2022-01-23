@@ -43,7 +43,27 @@ const GameFormNew = () => {
 
     return (
         <div>
-            
+            <form onSubmit={onSubmit}>
+                    <h4>Add a Game</h4>
+                    <label>Please enter a new shelf name:</label>
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e)=> {
+                            setTitle(e.target.value)
+                            if (e.target.value.length === 0) setErrors(['No title entered. Please enter a title.'])
+                            else setErrors([])
+                        }}
+                        required
+                        placeholder='Enter title'
+                    />
+                    {errors.length > 0 && errors.map((error, i) => (
+                        <div key={i}>
+                            {error}
+                        </div>
+                    ))}
+                    <button type="submit">Add Game</button>
+                </form>
         </div>
     )
 }
