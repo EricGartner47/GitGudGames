@@ -45,7 +45,7 @@ def delete_game(id):
     return{'message': 'Successfully Deleted Game'}
 
 #update game
-@game_routes.route('/<int:id', methods=['PUT'])
+@game_routes.route('/<int:id>', methods=['PUT'])
 def update_game(id):
     game = Game.query.get(id)
     form = GameForm()

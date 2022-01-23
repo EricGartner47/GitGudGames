@@ -11,7 +11,6 @@ const Shelfpage = () => {
     const user = useSelector(state => state.session.user)
     const userShelves = useSelector(state => state.shelves)
     const shelves = Object.values(userShelves)
-    console.log(userShelves)
     const dispatch = useDispatch()
 
     useEffect(()=> {

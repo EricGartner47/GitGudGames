@@ -18,6 +18,8 @@ const Homepage = () => {
                     </div>
                     <div>
                         <Link to="/app/shelves">My Shelves</Link>
+                    </div>
+                    <div>
                         <Link to="/app/games">My Games</Link>
                     </div>
                     <div>

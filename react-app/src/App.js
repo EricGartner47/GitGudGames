@@ -7,6 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 import Homepage from './components/Homepage';
 import SplashPage from './components/SplashPage';
 import Shelfpage from './components/Shelfpage';
+import GamePage from './components/GamePage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -47,6 +48,9 @@ function App() {
         </Route>
         <Route path='/app/shelves' exact={true}>
           <Shelfpage />
+        </Route>
+        <Route path='/app/games' exact={true}>
+          <GamePage />
         </Route>
         <Route path='/' exact={true} >
           <NavBar />
