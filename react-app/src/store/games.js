@@ -1,5 +1,6 @@
 const LOAD_GAMES = 'games/LOAD_GAMES'
 const NEW_GAME = 'games/NEW_GAME'
+const REMOVE_GAME = 'games/REMOVE_GAME'
 
 const getGame = (user, games) => {
     return {
@@ -12,6 +13,13 @@ const getGame = (user, games) => {
 const addGame = (game) => {
     return {
         type: NEW_GAME,
+        game
+    }
+}
+
+const removeGame = (game) => {
+    return {
+        type: REMOVE_GAME,
         game
     }
 }
@@ -41,6 +49,17 @@ export const createGame = payload => async dispatch => {
     const data = await res.json();
     dispatch(addGame(data));
     return data;
+}
+
+export const deleteGame = payload => async dispatch => {
+    const res = await fetch(`/api/games/${payload.id}`, {
+        method: 'DELETE'
+    })
+    if (res.ok){
+        const data = await res.json();
+        dispatch(removeGame(payload));
+        return data;
+    }
 }
 
 const initialState = {}
