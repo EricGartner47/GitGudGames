@@ -22,7 +22,7 @@ def get_all_games(id):
     results = Game.query.filter(Game.user_id == user.id).all()
     return {'games': [game.to_dict() for game in results]}
 
-#create games
+#create game
 @game_routes.route('/<int:id>', methods=['POST'])
 def create_game(id):
     user = User.query.get(id)
@@ -35,3 +35,11 @@ def create_game(id):
         db.session.commit()
         return game.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+#delete game
+@game_routes.route('/<int:id>', methods=['DELETE'])
+def delete_shelf(id):
+    game = Game.query.get(id)
+    db.session.delete(game)
+    db.session.commit()
+    return{'message': 'Successfully Deleted Game'}
