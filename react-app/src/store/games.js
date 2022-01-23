@@ -77,6 +77,9 @@ export const gameReducer = (state = initialState, action) => {
         case NEW_GAME:
             newState[action.game.id] = action.game
             return newState;
+        case REMOVE_GAME:
+            delete newState[action.game.id]
+            return newState;
         default:
             return state
     }
