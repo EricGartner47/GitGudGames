@@ -52,3 +52,11 @@ def update_game(id):
     form['crsf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit:
         game.title = form.title.data
+        game.notes = form.notes.data
+        game.rating = form.rating.data
+        game.completed = form.completed.data
+        game.genre = form.genre.data
+        game.shelf_id = form.shelf_id.data
+        db.session.commit()
+        return game.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
