@@ -38,8 +38,17 @@ def create_game(id):
 
 #delete game
 @game_routes.route('/<int:id>', methods=['DELETE'])
-def delete_shelf(id):
+def delete_game(id):
     game = Game.query.get(id)
     db.session.delete(game)
     db.session.commit()
     return{'message': 'Successfully Deleted Game'}
+
+#update game
+@game_routes.route('/<int:id', methods=['PUT'])
+def update_game(id):
+    game = Game.query.get(id)
+    form = GameForm()
+    form['crsf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit:
+        game.title = form.title.data
