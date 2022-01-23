@@ -24,6 +24,7 @@ const Shelfpage = () => {
                     <NavLink to="/app" exact={true} activeClassName='active' className='gitgud-logo'>
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                     </NavLink>
+                </div>
                     {shelves.map(shelf => {
                         return (
                             <ul>
@@ -34,7 +35,6 @@ const Shelfpage = () => {
                         )
                     })}
                     <ShelfFormNew />
-                </div>
             </div>
         )
     } else return (

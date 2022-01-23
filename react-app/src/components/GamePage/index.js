@@ -24,7 +24,13 @@ const GamePage = () => {
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                     </NavLink>
                 </div>
-
+                {games.map(game => {
+                    return (
+                        <ul>
+                            <li key={game.id}>{game.title}</li>
+                        </ul>
+                    )
+                })}
             </div>
         )
     } else return (
