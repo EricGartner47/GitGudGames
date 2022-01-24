@@ -62,6 +62,19 @@ export const deleteGame = payload => async dispatch => {
     }
 }
 
+export const updateGame = payload => async dispatch => {
+    const res = await fetch(`/api/games/${payload.id}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+    });
+    const data = await res.json()
+    if(res.ok){
+        dispatch(addGame(data))
+        return data
+    }
+}
+
 const initialState = {}
 
 export const gameReducer = (state = initialState, action) => {
