@@ -7,7 +7,6 @@ import './ShelfFormRemove.css'
 const ShelfFormRemove = ({shelf}) => {
     const user = useSelector(state => state.session.user);
     const userShelves = useSelector(state => state.shelf)
-    console.log(shelf)
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([])
 

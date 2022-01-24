@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, NavLink,  } from 'react-router-dom';
 import { loadGames } from '../../store/games';
 import GameFormNew from '../GameFormNew';
+import GameFormRemove from '../GameFormRemove';
 
 import './GamePage.css'
 
@@ -29,6 +30,7 @@ const GamePage = () => {
                     return (
                         <ul>
                             <li key={game.id}>{game.title}</li>
+                            <GameFormRemove game={game}/>
                         </ul>
                     )
                 })}
