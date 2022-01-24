@@ -23,7 +23,7 @@ const GameFormRemove =({game}) => {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <h4>Remove shelf</h4>
+                <h4>Remove Game</h4>
                 <label>Do you wish to remove the game "{game.title}"?</label>
                 <button type="submit">Delete Game</button>
             </form>
@@ -31,4 +31,4 @@ const GameFormRemove =({game}) => {
     )
 }
 
-export default GameFormRemove; 
+export default GameFormRemove;
