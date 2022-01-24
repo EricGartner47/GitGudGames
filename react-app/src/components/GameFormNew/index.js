@@ -57,13 +57,34 @@ const GameFormNew = () => {
                         required
                         placeholder='Enter title'
                     />
+                    <input
+                        type="text"
+                        value={notes}
+                        onChange={(e)=> {setNotes(e.target.value)}}
+                        placeholder='Enter Notes'
+                    />
+                    <input
+                        type="number"
+                        value={rating}
+                        onChange={(e)=> {setRating(e.target.value)}}
+                    />
+                    <input
+                        type="checkbox"
+                        value={completed}
+                        onChange={(e)=> {setCompleted(e.target.value)}}
+                    />
+                    <select>
+                        <option></option>
+                        value={genre}
+                        onChange={(e)=> {setGenre(e.target.value)}}
+                    </select>
                     {errors.length > 0 && errors.map((error, i) => (
                         <div key={i}>
                             {error}
                         </div>
                     ))}
                     <button type="submit">Add Game</button>
-                </form>
+            </form>
         </div>
     )
 }
