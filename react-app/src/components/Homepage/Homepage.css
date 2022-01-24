@@ -12,6 +12,7 @@ main {
     justify-content: space-between;
     background-color: white;
     padding: 16px;
+    border-bottom: 1px solid #9a3c0c;
 }
 
 #homepage-logo {

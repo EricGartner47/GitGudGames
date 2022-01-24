@@ -63,11 +63,19 @@ ul {
 #splashpage-footer {
     margin-top: 10px;
     background-color: #fff;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #9a3c0c;
     padding: 50px 0;
     height: 100%;
     width: 100%;
     font-size: 16px;
     box-sizing: border-box;
     display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#mario-splashpage {
+    /* background-color: #ffa542; */
+    background-image: url(https://e7.pngegg.com/pngimages/217/148/png-clipart-super-mario-8-bit-super-mario-bros-video-game-jump-angle-heroes.png);
+
 }

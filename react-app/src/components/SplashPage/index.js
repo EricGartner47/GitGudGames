@@ -19,6 +19,8 @@ const SplashPage = () => {
                 <h2>Need to track your gaming progress?</h2>
                 <p>You're in the right place. Enter your gaming details, and we'll track your progress for you. </p>
             </div>
+            <img alt='' id="mario-splashpage">
+            </img>
             <footer id="splashpage-footer">
             <div className='footer-nav-div'>
                 <ul className="nav-footer-list">

@@ -12,6 +12,10 @@ input, textarea {
     outline:  none;
 }
 
+a {
+    text-decoration: none;
+}
+
 button {
     background-color: #e75a10;
     color: white;
