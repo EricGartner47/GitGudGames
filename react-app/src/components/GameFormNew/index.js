@@ -1,18 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { createGame } from '../../store/games';
+import { loadShelves } from '../../store/shelves';
 import './GameFormNew.css'
 
 const GameFormNew = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
+    const userShelves = useSelector(state => state.shelves)
+    const shelves = Object.values(userShelves)
     const [title, setTitle] = useState('');
     const [notes, setNotes] = useState('');
     const [rating, setRating] = useState('');
     const [completed, setCompleted] = useState(false);
     const [genre, setGenre] = useState('')
     const [errors, setErrors] = useState([]);
+
+    useEffect(()=> {
+        dispatch(loadShelves(user))
+    }, [dispatch, user])
 
     if(!user) {
         return (

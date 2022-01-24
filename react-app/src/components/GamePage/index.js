@@ -4,6 +4,7 @@ import { Redirect, NavLink,  } from 'react-router-dom';
 import { loadGames } from '../../store/games';
 import GameFormNew from '../GameFormNew';
 import GameFormRemove from '../GameFormRemove';
+import GameFormUpdate from '../GameFormUpdate';
 
 import './GamePage.css'
 
@@ -31,7 +32,8 @@ const GamePage = () => {
                         <ul>
                             <li key={game.id}>{game.title}</li>
                             <div>
-                                <GameFormRemove game={game}/>
+                                <GameFormRemove game={game} />
+                                <GameFormUpdate game={game} />
                             </div>
                         </ul>
                     )

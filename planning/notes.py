@@ -15,5 +15,6 @@ dirty-brown: #946224
 
 font-family: 'Bangers', cursive;
 
+sudo apt install gnupg2
 
 '''

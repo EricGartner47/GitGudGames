@@ -49,7 +49,7 @@ def delete_game(id):
 def update_game(id):
     game = Game.query.get(id)
     form = GameForm()
-    form['crsf_token'].data = request.cookies['csrf_token']
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit:
         game.title = form.title.data
         game.notes = form.notes.data
