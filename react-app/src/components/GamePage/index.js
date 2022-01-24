@@ -30,7 +30,9 @@ const GamePage = () => {
                     return (
                         <ul>
                             <li key={game.id}>{game.title}</li>
-                            <GameFormRemove game={game}/>
+                            <div>
+                                <GameFormRemove game={game}/>
+                            </div>
                         </ul>
                     )
                 })}

@@ -10,7 +10,7 @@ const GameFormNew = () => {
     const [title, setTitle] = useState('');
     const [notes, setNotes] = useState('');
     const [rating, setRating] = useState('');
-    const [completed, setCompleted] = useState('');
+    const [completed, setCompleted] = useState(false);
     const [genre, setGenre] = useState('')
     const [errors, setErrors] = useState([]);
 
@@ -73,12 +73,17 @@ const GameFormNew = () => {
                     <input
                         type="checkbox"
                         value={completed}
-                        onChange={(e)=> {setCompleted(e.target.value)}}
+                        onChange={(e)=> {setCompleted(!completed)}}
                     />
-                    <select>
-                        <option></option>
-                        value={genre}
-                        onChange={(e)=> {setGenre(e.target.value)}}
+                    <select onChange={(e)=> {setGenre(e.target.value)}}>
+                        <option value="Shooter">Shooter</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Platformer">Platformer</option>
+                        <option value="Sandbox">Sandbox</option>
+                        <option value="Puzzler">Puzzler</option>
+                        <option value="Strategy">Strategy</option>
                     </select>
                     {errors.length > 0 && errors.map((error, i) => (
                         <div key={i}>
