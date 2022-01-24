@@ -21,8 +21,8 @@ const GamePage = () => {
 
     if(user){
         return (
-            <div>
-                <div id="shelfpage-nav-bar">
+            <div id='shelfpage-nav-bar'>
+                <div>
                     <NavLink to="/app" exact={true} activeClassName='active' className='gitgud-logo'>
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                     </NavLink>

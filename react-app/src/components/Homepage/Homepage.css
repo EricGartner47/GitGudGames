@@ -1,5 +1,29 @@
 main {
-    width: 780px;
-    margin-left: auto;
+    width: 100%;
     margin-right: auto;
+}
+
+#homepage-nav-bar {
+    box-sizing: border-box;
+    height: 50px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 16px;
+}
+
+#homepage-logo {
+    order: initial;
+}
+
+#progress-tracker {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+#suggested-games {
+    display:flex;
 }
