@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { deleteShelf } from '../../store/shelves';
 import './ShelfFormRemove.css'
 
-const ShelfFormRemove = ({shelf}) => {
+const ShelfFormRemove = ({shelf, hideForm}) => {
     const user = useSelector(state => state.session.user);
     const userShelves = useSelector(state => state.shelf)
     const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const ShelfFormRemove = ({shelf}) => {
 
     const onSubmit = async e => {
         e.preventDefault();
+        hideForm()
         return dispatch(deleteShelf(shelf))
     }
 

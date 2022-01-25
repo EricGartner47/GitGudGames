@@ -11,7 +11,9 @@ import './Shelfpage.css'
 const Shelfpage = () => {
     const user = useSelector(state => state.session.user)
     const userShelves = useSelector(state => state.shelves)
-    const [showCreateForm, setShowCreateForm] = useState(false)
+    const [showCreateForm, setShowCreateForm] = useState(false);
+    const [showUpdateForm, setShowUpdateForm] = useState(false);
+    const [showRemoveForm, setShowRemoveForm] = useState(false);
     const shelves = Object.values(userShelves)
     const dispatch = useDispatch()
 
@@ -31,8 +33,20 @@ const Shelfpage = () => {
                         return (
                             <ul>
                                 <li key={shelf.id}>{shelf.title}
-                                    <ShelfFormRemove shelf={shelf}/>
-                                    <ShelfFormUpdate shelf={shelf}/>
+                                <button onClick={()=>setShowUpdateForm(true)}> Edit Shelf
+                                    {showUpdateForm && (
+                                        <Modal onClose={()=> setShowUpdateForm(false)}>
+                                            <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
+                                        </Modal>
+                                    )}
+                                </button>
+                                <button onClick={()=>setShowRemoveForm(true)}> Delete Shelf
+                                    {showRemoveForm && (
+                                        <Modal onClose={()=> setShowRemoveForm(false)}>
+                                        <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
+                                        </Modal>
+                                    )}
+                                </button>
                                 </li>
                             </ul>
                         )

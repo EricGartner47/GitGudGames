@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateShelf } from '../../store/shelves';
 import './ShelfFormUpdate.css'
 
-const ShelfFormUpdate = ({shelf}) => {
+const ShelfFormUpdate = ({shelf, hideForm}) => {
     const user = useSelector(state => state.session.user)
     const [title, setTitle] = useState(shelf.title);
     const [errors, setErrors] = useState([]);
@@ -22,6 +22,7 @@ const ShelfFormUpdate = ({shelf}) => {
                 .then(async res=> {
                     if (res.errors) setErrors(res.errors)
                 })
+            hideForm()
             return dispatch(updateShelf(payload))
         }
     }
@@ -53,4 +54,4 @@ const ShelfFormUpdate = ({shelf}) => {
     )
 }
 
-export default ShelfFormUpdate; 
+export default ShelfFormUpdate;
