@@ -28,8 +28,6 @@ const Homepage = () => {
                 </div>
                 <section id="progress-tracker">
                     <h3>Currently Playing</h3>
-                </section>
-                <section id="suggested-games">
                     <h3>Suggested Games</h3>
                 </section>
             </main>

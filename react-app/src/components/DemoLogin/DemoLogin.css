@@ -1,0 +1,7 @@
+button {
+    font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+    cursor:pointer; 
+}

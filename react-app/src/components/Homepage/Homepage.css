@@ -21,8 +21,11 @@ main {
 
 #progress-tracker {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 16px;
+    position: relative;
+    top: 60px;
+    justify-content: space-around;
 }
 
 #suggested-games {
