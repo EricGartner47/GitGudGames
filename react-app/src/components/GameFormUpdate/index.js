@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateGame } from '../../store/games';
 import './GameFormUpdate.css'
 
-const GameFormUpdate =({game, hideForm}) => {
+const GameFormUpdate =({game, hideForm, shelves}) => {
+    console.log(game.shelf_id)
     const user = useSelector(state => state.session.user)
     const [title, setTitle] = useState(game.title);
     const [notes, setNotes] = useState(game.notes);
     const [rating, setRating] = useState(game.rating);
     const [completed, setCompleted] = useState(game.completed);
     const [genre, setGenre] = useState(game.genre)
+    const [shelf_id, setShelf_id] = useState(game.shelf_id)
     const [errors, setErrors] = useState([])
     const dispatch = useDispatch();
 
@@ -24,7 +26,8 @@ const GameFormUpdate =({game, hideForm}) => {
                 notes,
                 rating,
                 completed,
-                genre
+                genre,
+                shelf_id
             }
             await dispatch(updateGame(payload))
                 .then(async res=> {
@@ -76,6 +79,11 @@ const GameFormUpdate =({game, hideForm}) => {
                         <option value="Sandbox">Sandbox</option>
                         <option value="Puzzler">Puzzler</option>
                         <option value="Strategy">Strategy</option>
+                    </select>
+                    <select onChange={(e)=> {setShelf_id(e.target.value)}}>
+                        {shelves.map(shelf => {
+                            return <option key={shelf.id} value={shelf.id}>{shelf.title}</option>
+                        })}
                     </select>
                 {errors.length > 0 && errors.map((error, i)=> (
                     <div key={i}>

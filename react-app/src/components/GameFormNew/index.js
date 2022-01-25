@@ -5,21 +5,16 @@ import { createGame } from '../../store/games';
 import { loadShelves } from '../../store/shelves';
 import './GameFormNew.css'
 
-const GameFormNew = ({hideForm}) => {
+const GameFormNew = ({hideForm, shelves}) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
-    const userShelves = useSelector(state => state.shelves)
-    const shelves = Object.values(userShelves)
     const [title, setTitle] = useState('');
     const [notes, setNotes] = useState('');
     const [rating, setRating] = useState('');
     const [completed, setCompleted] = useState(false);
     const [genre, setGenre] = useState('')
+    const [shelf_id, setShelf_id] = useState('')
     const [errors, setErrors] = useState([]);
-
-    useEffect(()=> {
-        dispatch(loadShelves(user))
-    }, [dispatch, user])
 
     if(!user) {
         return (
@@ -37,7 +32,8 @@ const GameFormNew = ({hideForm}) => {
                 notes,
                 rating,
                 completed,
-                genre
+                genre,
+                shelf_id
             }
             const newGame = await dispatch(createGame(payload))
                 .then(async res =>{
@@ -53,7 +49,6 @@ const GameFormNew = ({hideForm}) => {
         <div>
             <form onSubmit={onSubmit}>
                     <h4>Add a Game</h4>
-                    <label>Please enter a game title:</label>
                     <input
                         type="text"
                         value={title}
@@ -92,6 +87,11 @@ const GameFormNew = ({hideForm}) => {
                         <option value="Sandbox">Sandbox</option>
                         <option value="Puzzler">Puzzler</option>
                         <option value="Strategy">Strategy</option>
+                    </select>
+                    <select onChange={(e)=> {setShelf_id(e.target.value)}}>
+                        {shelves.map(shelf => {
+                            return <option key={shelf.id} value={shelf.id}>{shelf.title}</option>
+                        })}
                     </select>
                     {errors.length > 0 && errors.map((error, i) => (
                         <div key={i}>

@@ -11,9 +11,9 @@ const Homepage = () => {
     const games = Object.values(userGames)
     const dispatch = useDispatch()
 
-    useEffect(()=> {
-        dispatch(loadGamesProgressBar(user))
-    }, [dispatch, user])
+    // useEffect(()=> {
+    //     dispatch(loadGamesProgressBar(user))
+    // }, [dispatch, user])
 
     if (user) {
         return (
@@ -38,7 +38,7 @@ const Homepage = () => {
                     <div id='currently-playing-container'>
                         <h3>Currently Playing</h3>
                             <div id='progress-games-list'>
-                                {games.map(game => {
+                                {/* {games.map(game => {
                                     return (
                                         <ul id='progress-games-list'>
                                             <li key={game.id}> {game.title}
@@ -46,7 +46,7 @@ const Homepage = () => {
                                             </li>
                                         </ul>
                                     )
-                                })}
+                                })} */}
                             </div>
                     </div>
                     <h3>Suggested Games</h3>

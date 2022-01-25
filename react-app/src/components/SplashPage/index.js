@@ -13,7 +13,7 @@ const SplashPage = () => {
         )
     }
 
-    else return (
+     return (
         <>
             <div id='intro-container'>
                 <h2>Need to track your gaming progress?</h2>
