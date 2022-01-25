@@ -33,15 +33,15 @@ const Shelfpage = () => {
                         return (
                             <ul>
                                 <li key={shelf.id}>{shelf.title}
-                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(true)}>
-                                    {showUpdateForm && (
+                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(shelf.id)}>
+                                    {showUpdateForm === shelf.id && (
                                         <Modal onClose={()=> setShowUpdateForm(false)}>
                                             <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
                                         </Modal>
                                     )}
                                 </i>
-                                <i class="fas fa-trash" onClick={()=>setShowRemoveForm(true)}>
-                                    {showRemoveForm && (
+                                <i class="fas fa-trash" onClick={()=>setShowRemoveForm(shelf.id)}>
+                                    {showRemoveForm === shelf.id && (
                                         <Modal onClose={()=> setShowRemoveForm(false)}>
                                             <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
                                         </Modal>

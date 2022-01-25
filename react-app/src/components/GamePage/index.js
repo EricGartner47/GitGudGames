@@ -33,25 +33,26 @@ const GamePage = () => {
                 {games.map(game => {
                     return (
                         <ul>
-                            <li key={game.id}>{game.title}</li>
-                            <div>
-                                <i class="fas fa-trash" onClick={()=>setShowRemoveForm(true)}>
-                                    {showRemoveForm && (
-                                        <Modal onClose={()=> setShowRemoveForm(false)}>
-                                            <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
-                                        </Modal>
-                                    )}
-                                </i>
-                            </div>
-                            <div>
-                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(true)}>
-                                    {showUpdateForm && (
-                                        <Modal onClose={()=> setShowUpdateForm(false)}>
-                                            <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} />
-                                        </Modal>
-                                    )}
-                                </i>
-                            </div>
+                            <li key={game.id}>{game.title}
+                                <div>
+                                    <i class="fas fa-trash" onClick={()=>setShowRemoveForm(game.id)}>
+                                        {showRemoveForm === game.id && (
+                                            <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
+                                            </Modal>
+                                        )}
+                                    </i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}>
+                                        {showUpdateForm === game.id && (
+                                            <Modal onClose={()=> setShowUpdateForm(false)}>
+                                                <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} />
+                                            </Modal>
+                                        )}
+                                    </i>
+                                </div>
+                            </li>
                         </ul>
                     )
                 })}
