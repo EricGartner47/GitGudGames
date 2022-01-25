@@ -35,33 +35,33 @@ const GamePage = () => {
                         <ul>
                             <li key={game.id}>{game.title}</li>
                             <div>
-                                <button onClick={()=>setShowRemoveForm(true)}> Delete Game
+                                <i class="fas fa-trash" onClick={()=>setShowRemoveForm(true)}>
                                     {showRemoveForm && (
                                         <Modal onClose={()=> setShowRemoveForm(false)}>
                                             <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
                                         </Modal>
                                     )}
-                                </button>
+                                </i>
                             </div>
                             <div>
-                                <button onClick={()=> setShowUpdateForm(true)}> Update Game
+                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(true)}>
                                     {showUpdateForm && (
                                         <Modal onClose={()=> setShowUpdateForm(false)}>
                                             <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} />
                                         </Modal>
                                     )}
-                                </button>
+                                </i>
                             </div>
                         </ul>
                     )
                 })}
-                <button onClick={()=> setShowCreateForm(true)}> Create Game
+                <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
                     {showCreateForm && (
                         <Modal onClose={()=> setShowCreateForm(false)}>
                             <GameFormNew hideForm={()=> setShowCreateForm(false)}/>
                         </Modal>
                     )}
-                </button>
+                </i>
             </div>
         )
     } else return (
