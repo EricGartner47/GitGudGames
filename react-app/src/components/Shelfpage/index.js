@@ -31,6 +31,7 @@ const Shelfpage = () => {
                     </NavLink>
                 </div>
                     <div id="shelfPage-container">
+                        <h4>My Shelves: </h4>
                         {shelves.map(shelf => {
                             return (
                                 <ul>
@@ -53,14 +54,17 @@ const Shelfpage = () => {
                                 </ul>
                             )
                         })}
+                        <div id="create-shelf-container">
+                            <h5>Create Shelf</h5>
+                            <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
+                                {showCreateForm && (
+                                    <Modal onClose={()=> setShowCreateForm(false)}>
+                                        <ShelfFormNew hideForm={()=> setShowCreateForm(false)}/>
+                                    </Modal>
+                                )}
+                            </i>
+                        </div>
                     </div>
-                    <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
-                        {showCreateForm && (
-                            <Modal onClose={()=> setShowCreateForm(false)}>
-                                <ShelfFormNew hideForm={()=> setShowCreateForm(false)}/>
-                            </Modal>
-                        )}
-                    </i>
             </div>
         )
     } else return (
