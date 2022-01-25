@@ -35,16 +35,20 @@ const Homepage = () => {
                     </div>
                 </div>
                 <section id="progress-tracker">
-                    <h3>Currently Playing</h3>
-                    {games.map(game => {
-                        return (
-                            <ul id='progress-games-list'>
-                                <li key={game.id}> {game.title}
+                    <div id='currently-playing-container'>
+                        <h3>Currently Playing</h3>
+                            <div id='progress-games-list'>
+                                {games.map(game => {
+                                    return (
+                                        <ul id='progress-games-list'>
+                                            <li key={game.id}> {game.title}
 
-                                </li>
-                            </ul>
-                        )
-                    })}
+                                            </li>
+                                        </ul>
+                                    )
+                                })}
+                            </div>
+                    </div>
                     <h3>Suggested Games</h3>
                 </section>
             </main>

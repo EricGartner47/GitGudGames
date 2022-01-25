@@ -35,4 +35,14 @@ main {
 #progress-games-list {
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 5%;
+    right: 5%;
+}
+
+#currently-playing-container {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid #9a3c0c;
+    border-radius: 3px;
 }
