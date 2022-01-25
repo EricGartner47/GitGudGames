@@ -14,6 +14,7 @@ const Shelfpage = () => {
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [showUpdateForm, setShowUpdateForm] = useState(false);
     const [showRemoveForm, setShowRemoveForm] = useState(false);
+
     const shelves = Object.values(userShelves)
     const dispatch = useDispatch()
 
@@ -56,7 +57,6 @@ const Shelfpage = () => {
                             <Modal onClose={()=> setShowCreateForm(false)}>
                                 <ShelfFormNew hideForm={()=> setShowCreateForm(false)}/>
                             </Modal>
-
                         )}
                     </i>
             </div>

@@ -38,6 +38,13 @@ export const loadGames = user => async dispatch => {
     return data;
 }
 
+export const loadGamesProgressBar = user => async dispatch => {
+    const res = await fetch(`/api/games/${user.id}/three`)
+    const data = await res.json();
+    dispatch(getGame(user, data))
+    return data;
+}
+
 export const createGame = payload => async dispatch => {
     const res = await fetch(`/api/games/${payload.user_id}`, {
         method: 'POST',

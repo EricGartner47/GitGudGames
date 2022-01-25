@@ -31,3 +31,8 @@ main {
 #suggested-games {
     display:flex;
 }
+
+#progress-games-list {
+    display: flex;
+    flex-direction: column;
+}

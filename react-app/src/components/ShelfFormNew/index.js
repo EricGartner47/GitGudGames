@@ -39,7 +39,7 @@ const ShelfFormNew = ({hideForm}) => {
             <div>
                 <form onSubmit={onSubmit}>
                     <h4>Add a shelf</h4>
-                    <label>Please enter a new shelf name:</label>
+                    <label>Please enter a shelf title:</label>
                     <input
                         type="text"
                         value={title}

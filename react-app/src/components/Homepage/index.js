@@ -1,11 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, NavLink, Link } from 'react-router-dom';
+import { loadGamesProgressBar } from '../../store/games';
 import Userbar from '../Userbar';
 import './Homepage.css'
 
 const Homepage = () => {
     const user = useSelector(state => state.session.user);
+    const userGames = useSelector(state => state.games);
+    const games = Object.values(userGames)
+    const dispatch = useDispatch()
+
+    useEffect(()=> {
+        dispatch(loadGamesProgressBar(user))
+    }, [dispatch, user])
 
     if (user) {
         return (
@@ -16,10 +24,10 @@ const Homepage = () => {
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                         </NavLink>
                     </div>
-                    <div>
+                    <div id='my-shelves-link'>
                         <Link to="/app/shelves">My Shelves</Link>
                     </div>
-                    <div>
+                    <div id='my=games-link'>
                         <Link to="/app/games">My Games</Link>
                     </div>
                     <div>
@@ -28,6 +36,15 @@ const Homepage = () => {
                 </div>
                 <section id="progress-tracker">
                     <h3>Currently Playing</h3>
+                    {games.map(game => {
+                        return (
+                            <ul id='progress-games-list'>
+                                <li key={game.id}> {game.title}
+
+                                </li>
+                            </ul>
+                        )
+                    })}
                     <h3>Suggested Games</h3>
                 </section>
             </main>

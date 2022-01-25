@@ -53,7 +53,7 @@ const GameFormNew = ({hideForm}) => {
         <div>
             <form onSubmit={onSubmit}>
                     <h4>Add a Game</h4>
-                    <label>Please enter a new shelf name:</label>
+                    <label>Please enter a game title:</label>
                     <input
                         type="text"
                         value={title}
