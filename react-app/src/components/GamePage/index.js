@@ -44,7 +44,13 @@ const GamePage = () => {
                                 </button>
                             </div>
                             <div>
-                                <GameFormUpdate game={game} />
+                                <button onClick={()=> setShowUpdateForm(true)}> Update Game
+                                    {showUpdateForm && (
+                                        <Modal onClose={()=> setShowUpdateForm(false)}>
+                                            <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} />
+                                        </Modal>
+                                    )}
+                                </button>
                             </div>
                         </ul>
                     )

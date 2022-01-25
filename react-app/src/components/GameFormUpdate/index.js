@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateGame } from '../../store/games';
 import './GameFormUpdate.css'
 
-const GameFormUpdate =({game}) => {
+const GameFormUpdate =({game, hideForm}) => {
     const user = useSelector(state => state.session.user)
     const [title, setTitle] = useState(game.title);
     const [notes, setNotes] = useState(game.notes);
@@ -30,6 +30,7 @@ const GameFormUpdate =({game}) => {
                 .then(async res=> {
                     if (res.errors) setErrors(res.errors)
                 })
+            hideForm()
             return dispatch(updateGame(payload))
         }
     }
