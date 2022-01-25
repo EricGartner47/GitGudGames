@@ -33,32 +33,32 @@ const Shelfpage = () => {
                         return (
                             <ul>
                                 <li key={shelf.id}>{shelf.title}
-                                <button onClick={()=>setShowUpdateForm(true)}> Edit Shelf
+                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(true)}>
                                     {showUpdateForm && (
                                         <Modal onClose={()=> setShowUpdateForm(false)}>
                                             <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
                                         </Modal>
                                     )}
-                                </button>
-                                <button onClick={()=>setShowRemoveForm(true)}> Delete Shelf
+                                </i>
+                                <i class="fas fa-trash" onClick={()=>setShowRemoveForm(true)}>
                                     {showRemoveForm && (
                                         <Modal onClose={()=> setShowRemoveForm(false)}>
                                             <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
                                         </Modal>
                                     )}
-                                </button>
+                                </i>
                                 </li>
                             </ul>
                         )
                     })}
-                    <button onClick={()=> setShowCreateForm(true)}> Create Shelf
+                    <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
                         {showCreateForm && (
                             <Modal onClose={()=> setShowCreateForm(false)}>
                                 <ShelfFormNew hideForm={()=> setShowCreateForm(false)}/>
                             </Modal>
 
                         )}
-                    </button>
+                    </i>
             </div>
         )
     } else return (
