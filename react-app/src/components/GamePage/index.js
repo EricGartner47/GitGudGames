@@ -1,16 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, NavLink,  } from 'react-router-dom';
+import { Modal } from '../../context/modal';
 import { loadGames } from '../../store/games';
 import GameFormNew from '../GameFormNew';
 import GameFormRemove from '../GameFormRemove';
 import GameFormUpdate from '../GameFormUpdate';
-
 import './GamePage.css'
 
 const GamePage = () => {
     const user = useSelector(state => state.session.user)
     const userGames = useSelector(state => state.games)
+    const [showCreateForm, setShowCreateForm] = useState(false);
+    const [showUpdateForm, setShowUpdateForm] = useState(false);
+    const [showRemoveForm, setShowRemoveForm] = useState(false);
     const games = Object.values(userGames)
     const dispatch = useDispatch()
 
@@ -38,7 +41,13 @@ const GamePage = () => {
                         </ul>
                     )
                 })}
-                <GameFormNew />
+                <button onClick={()=> setShowCreateForm(true)}> Create Game
+                    {showCreateForm && (
+                        <Modal onClose={()=> setShowCreateForm(false)}>
+                            <GameFormNew hideForm={()=> setShowCreateForm(false)}/>
+                        </Modal>
+                    )}
+                </button>
             </div>
         )
     } else return (
