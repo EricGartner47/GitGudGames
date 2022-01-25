@@ -1,6 +1,7 @@
 import React, {useEffect, useState}from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, NavLink} from "react-router-dom";
+import { Modal } from "../../context/modal";
 import { loadShelves } from "../../store/shelves";
 import ShelfFormNew from "../ShelfFormNew";
 import ShelfFormRemove from "../ShelfFormRemove";
@@ -10,6 +11,7 @@ import './Shelfpage.css'
 const Shelfpage = () => {
     const user = useSelector(state => state.session.user)
     const userShelves = useSelector(state => state.shelves)
+    const [showCreateForm, setShowCreateForm] = useState(false)
     const shelves = Object.values(userShelves)
     const dispatch = useDispatch()
 
@@ -28,13 +30,21 @@ const Shelfpage = () => {
                     {shelves.map(shelf => {
                         return (
                             <ul>
-                                <li key={shelf.id}>{shelf.title}</li>
-                                <ShelfFormRemove shelf={shelf}/>
-                                <ShelfFormUpdate shelf={shelf}/>
+                                <li key={shelf.id}>{shelf.title}
+                                    <ShelfFormRemove shelf={shelf}/>
+                                    <ShelfFormUpdate shelf={shelf}/>
+                                </li>
                             </ul>
                         )
                     })}
-                    <ShelfFormNew />
+                    <button onClick={()=> setShowCreateForm(true)}> Create Shelf
+                        {showCreateForm && (
+                            <Modal onClose={()=> setShowCreateForm(false)}>
+                                <ShelfFormNew hideForm={()=> setShowCreateForm(false)}/>
+                            </Modal>
+
+                        )}
+                    </button>
             </div>
         )
     } else return (

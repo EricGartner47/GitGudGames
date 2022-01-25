@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { createShelf } from '../../store/shelves';
 import './ShelfFormNew.css'
 
-const ShelfFormNew = () => {
+const ShelfFormNew = ({hideForm}) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
     const [title, setTitle] = useState('')
@@ -30,6 +30,7 @@ const ShelfFormNew = () => {
                     if (res.errors) setErrors(res.errors)
                     else return res
                 })
+            hideForm()
             return newShelf
         }
     }
