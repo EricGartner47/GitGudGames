@@ -30,28 +30,30 @@ const Shelfpage = () => {
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                     </NavLink>
                 </div>
-                    {shelves.map(shelf => {
-                        return (
-                            <ul>
-                                <li key={shelf.id}>{shelf.title}
-                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(shelf.id)}>
-                                    {showUpdateForm === shelf.id && (
-                                        <Modal onClose={()=> setShowUpdateForm(false)}>
-                                            <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
-                                        </Modal>
-                                    )}
-                                </i>
-                                <i class="fas fa-trash" onClick={()=>setShowRemoveForm(shelf.id)}>
-                                    {showRemoveForm === shelf.id && (
-                                        <Modal onClose={()=> setShowRemoveForm(false)}>
-                                            <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
-                                        </Modal>
-                                    )}
-                                </i>
-                                </li>
-                            </ul>
-                        )
-                    })}
+                    <div id="shelfPage-container">
+                        {shelves.map(shelf => {
+                            return (
+                                <ul>
+                                    <li key={shelf.id}>{shelf.title}
+                                    <i class="fas fa-edit" onClick={()=> setShowUpdateForm(shelf.id)}>
+                                        {showUpdateForm === shelf.id && (
+                                            <Modal onClose={()=> setShowUpdateForm(false)}>
+                                                <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
+                                            </Modal>
+                                        )}
+                                    </i>
+                                    <i class="fas fa-trash" onClick={()=>setShowRemoveForm(shelf.id)}>
+                                        {showRemoveForm === shelf.id && (
+                                            <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
+                                            </Modal>
+                                        )}
+                                    </i>
+                                    </li>
+                                </ul>
+                            )
+                        })}
+                    </div>
                     <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
                         {showCreateForm && (
                             <Modal onClose={()=> setShowCreateForm(false)}>
