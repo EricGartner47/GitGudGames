@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { deleteGame } from '../../store/games';
 import './GameFormRemove.css'
 
-const GameFormRemove =({game}) => {
+const GameFormRemove =({game, hideForm}) => {
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([])
@@ -17,6 +17,7 @@ const GameFormRemove =({game}) => {
 
     const onSubmit = async e => {
         e.preventDefault();
+        hideForm()
         return dispatch(deleteGame(game))
     }
 

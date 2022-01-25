@@ -35,7 +35,15 @@ const GamePage = () => {
                         <ul>
                             <li key={game.id}>{game.title}</li>
                             <div>
-                                <GameFormRemove game={game} />
+                                <button onClick={()=>setShowRemoveForm(true)}> Delete Game
+                                    {showRemoveForm && (
+                                        <Modal onClose={()=> setShowRemoveForm(false)}>
+                                            <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
+                                        </Modal>
+                                    )}
+                                </button>
+                            </div>
+                            <div>
                                 <GameFormUpdate game={game} />
                             </div>
                         </ul>

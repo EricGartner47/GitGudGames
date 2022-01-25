@@ -5,7 +5,7 @@ import { createGame } from '../../store/games';
 import { loadShelves } from '../../store/shelves';
 import './GameFormNew.css'
 
-const GameFormNew = () => {
+const GameFormNew = ({hideForm}) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const userShelves = useSelector(state => state.shelves)
@@ -44,6 +44,7 @@ const GameFormNew = () => {
                     if (res.errors) setErrors(res.errors)
                     else return res
                 })
+            hideForm()
             return newGame
         }
     }

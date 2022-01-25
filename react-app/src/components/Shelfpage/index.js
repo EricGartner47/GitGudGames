@@ -43,7 +43,7 @@ const Shelfpage = () => {
                                 <button onClick={()=>setShowRemoveForm(true)}> Delete Shelf
                                     {showRemoveForm && (
                                         <Modal onClose={()=> setShowRemoveForm(false)}>
-                                        <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
+                                            <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
                                         </Modal>
                                     )}
                                 </button>
