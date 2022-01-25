@@ -76,6 +76,13 @@ ul {
 
 #mario-splashpage {
     /* background-color: #ffa542; */
-    background-image: url(https://e7.pngegg.com/pngimages/217/148/png-clipart-super-mario-8-bit-super-mario-bros-video-game-jump-angle-heroes.png);
+    /* background-image: url(https://e7.pngegg.com/pngimages/217/148/png-clipart-super-mario-8-bit-super-mario-bros-video-game-jump-angle-heroes.png); */
 
+}
+
+#intro-container {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
