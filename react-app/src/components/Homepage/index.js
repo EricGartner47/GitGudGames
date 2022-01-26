@@ -15,6 +15,7 @@ const Homepage = () => {
     //     dispatch(loadGamesProgressBar(user))
     // }, [dispatch, user])
 
+
     if (user) {
         return (
             <main>
@@ -38,7 +39,7 @@ const Homepage = () => {
                     <div id='currently-playing-container'>
                         <h3>Currently Playing</h3>
                             <div id='progress-games-list'>
-                                <ul>
+                                 <ul>
                                     <li>
                                         Persona 4
                                     </li>
