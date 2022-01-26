@@ -2,7 +2,7 @@ import React, {useEffect, useState}from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, NavLink} from "react-router-dom";
 import { Modal } from "../../context/modal";
-import { loadShelves } from "../../store/shelves";
+import { loadShelves, loadGamesbyShelfId } from "../../store/shelves";
 import ShelfFormNew from "../ShelfFormNew";
 import ShelfFormRemove from "../ShelfFormRemove";
 import ShelfFormUpdate from "../ShelfFormUpdate";
@@ -14,13 +14,17 @@ const Shelfpage = () => {
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [showUpdateForm, setShowUpdateForm] = useState(false);
     const [showRemoveForm, setShowRemoveForm] = useState(false);
-
     const shelves = Object.values(userShelves)
     const dispatch = useDispatch()
 
     useEffect(()=> {
         dispatch(loadShelves(user))
     }, [dispatch, user])
+
+    // const setShelf = (shelf) => {
+    //     const games = dispatch(loadGamesbyShelfId(shelf))
+    //     console.log(games)
+    // }
 
     if(user) {
         return (

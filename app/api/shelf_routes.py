@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, session
 from flask_login import login_required
-from app.models import User, db, Shelf
+from app.models import User, db, Shelf, Game
 from app.forms import ShelfForm
 
 shelf_routes = Blueprint('shelves', __name__)
@@ -21,6 +21,13 @@ def get_all_shelves(id):
     user = User.query.get(id)
     results = Shelf.query.filter(Shelf.user_id == user.id).all()
     return {'shelves': [shelf.to_dict() for shelf in results]}
+
+#get games by shelf id
+@shelf_routes.route('/getGames/<int:id>')
+def get_games_by_shelf(id):
+    shelf = Shelf.query.get(id)
+    results = Game.query.filter(Game.shelf_id == shelf.id).all()
+    return {'gamesByShelf': [game.to_dict() for game in results]}
 
 #create a shelf
 @shelf_routes.route('/<int:id>', methods=['POST'])
