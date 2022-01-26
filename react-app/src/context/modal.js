@@ -4,13 +4,13 @@ import './Modal.css';
 
 const ModalContext = createContext();
 
-export const ModalProvider = ({ children }) => {
+export function ModalProvider ({ children }) {
     const modalRef = useRef();
     const [value, setValue] = useState();
 
     useEffect(() => {
         setValue(modalRef.current)
-    }, [modalRef])
+    }, [])
 
     return (
         <>
@@ -19,10 +19,10 @@ export const ModalProvider = ({ children }) => {
             </ModalContext.Provider>
             <div ref={modalRef} />
         </>
-    )
+    );
 }
 
-export const Modal = ({ onClose, children }) => {
+export function Modal ({ onClose, children }) {
     const modalNode = useContext(ModalContext);
     if (!modalNode) return null;
 
@@ -32,6 +32,6 @@ export const Modal = ({ onClose, children }) => {
             <div id="modal-content">
                 {children}
             </div>
-        </div>
-        , modalNode)
-}   
+        </div>,
+        modalNode);
+}

@@ -9,3 +9,26 @@
 .fa-plus-square:hover{
     cursor: pointer;
 }
+
+#gamePage-container {
+    background-color: white;
+    width: 35vw;
+    padding: 8px;
+    margin: 8px;
+    height: 80vh;
+    border: 1px solid #9a3c0c;
+    border-radius: 3px;
+}
+
+#fullGamePage-container {
+    display:flex;
+}
+
+#create-game-container {
+    background-color: white;
+    height: 10vh;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid #9a3c0c;
+    border-radius: 3px;
+}

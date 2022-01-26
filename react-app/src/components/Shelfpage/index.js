@@ -11,9 +11,9 @@ import './Shelfpage.css'
 const Shelfpage = () => {
     const user = useSelector(state => state.session.user)
     const userShelves = useSelector(state => state.shelves)
-    const [showCreateForm, setShowCreateForm] = useState(false);
-    const [showUpdateForm, setShowUpdateForm] = useState(false);
-    const [showRemoveForm, setShowRemoveForm] = useState(false);
+    const [CreateFormModal, setCreateFormModal] = useState(false);
+    const [UpdateFormModal, setUpdateFormModal] = useState(false);
+    const [RemoveFormModal, setRemoveFormModal] = useState(false);
     const shelves = Object.values(userShelves)
     const dispatch = useDispatch()
 
@@ -40,20 +40,18 @@ const Shelfpage = () => {
                             return (
                                     <ul>
                                         <li key={shelf.id}>{shelf.title}
-                                        <i class="fas fa-edit" onClick={()=> setShowUpdateForm(shelf.id)}>
-                                            {showUpdateForm === shelf.id && (
-                                                <Modal onClose={()=> setShowUpdateForm(false)}>
-                                                    <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
+                                        <i class="fas fa-edit" onClick={()=> setUpdateFormModal(shelf.id)}></i>
+                                            {UpdateFormModal === shelf.id && (
+                                                <Modal onClose={()=> setUpdateFormModal(false)}>
+                                                    <ShelfFormUpdate shelf={shelf} hideForm={()=> setUpdateFormModal(false)}/>
                                                 </Modal>
                                             )}
-                                        </i>
-                                        <i class="fas fa-trash" onClick={()=> setShowRemoveForm(shelf.id)}>
-                                            {showRemoveForm === shelf.id && (
-                                                <Modal onClose={()=> setShowRemoveForm(false)}>
-                                                    <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
+                                        <i class="fas fa-trash" onClick={()=> setRemoveFormModal(shelf.id)}></i>
+                                            {RemoveFormModal === shelf.id && (
+                                                <Modal onClose={()=> setRemoveFormModal(false)}>
+                                                    <ShelfFormRemove shelf={shelf} hideForm={()=> setRemoveFormModal(false)}/>
                                                 </Modal>
                                             )}
-                                        </i>
                                         </li>
                                     </ul>
                             )
@@ -67,13 +65,12 @@ const Shelfpage = () => {
                         })} */}
                         <div id="create-shelf-container">
                             <h5>Create Shelf</h5>
-                            <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
-                                {showCreateForm && (
-                                    <Modal onClose={()=> setShowCreateForm(false)}>
-                                        <ShelfFormNew hideForm={()=> setShowCreateForm(false)}/>
+                            <i class="fas fa-plus-square" onClick={()=> setCreateFormModal(true)}></i>
+                                {CreateFormModal && (
+                                    <Modal onClose={()=> setCreateFormModal(false)}>
+                                        <ShelfFormNew hideForm={()=> setCreateFormModal(false)}/>
                                     </Modal>
                                 )}
-                            </i>
                         </div>
                     </div>
             </div>
