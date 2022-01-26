@@ -36,7 +36,6 @@ const removeShelf = (shelf) => {
 export const loadShelves = user => async dispatch => {
     const res = await fetch(`/api/shelves/${user.id}`)
     const data = await res.json();
-    console.log(data, 'these are shelves')
     dispatch(getShelf(user, data))
     return data;
 }

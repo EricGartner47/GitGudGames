@@ -21,10 +21,6 @@ const Shelfpage = () => {
         dispatch(loadShelves(user))
     }, [dispatch, user])
 
-    // const setShelf = (shelf) => {
-    //     const games = dispatch(loadGamesbyShelfId(shelf))
-    //     console.log(games)
-    // }
 
     if(user) {
         return (
@@ -47,7 +43,7 @@ const Shelfpage = () => {
                                             </Modal>
                                         )}
                                     </i>
-                                    <i class="fas fa-trash" onClick={()=>setShowRemoveForm(shelf.id)}>
+                                    <i class="fas fa-trash" onClick={()=> setShowRemoveForm(shelf.id)}>
                                         {showRemoveForm === shelf.id && (
                                             <Modal onClose={()=> setShowRemoveForm(false)}>
                                                 <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
