@@ -74,7 +74,7 @@ const Shelfpage = () => {
                                         </tr>
                                         <tr>
                                             <td>{game.title}</td>
-                                            <td>{game.rating}</td>
+                                            <td>{game.rating || 'N/A'}</td>
                                             <td>{game.genre}</td>
                                         </tr>
                                     </table>

@@ -90,7 +90,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         {error}
                     </div>
                 ))}
-                <button type='submit'>Save</button>
+                <i class="far fa-save" onClick={onSubmit}></i>
             </form>
         </div>
     )
