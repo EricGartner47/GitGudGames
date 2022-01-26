@@ -20,6 +20,7 @@
     background-color: white;
     position: absolute;
     right: 20vw;
+    top: 11vh;
     padding: 8px;
     width: 400px;
     border: 1px solid #9a3c0c;
@@ -33,4 +34,9 @@ th, td {
     text-align:left;
     font-size: 12px;
     border-radius: 3px;
+}
+
+th {
+    background-color: #ffa542;
+    color: white;
 }
