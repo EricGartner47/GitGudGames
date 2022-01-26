@@ -39,26 +39,40 @@ const GamePage = () => {
                         <h4>My Games: </h4>
                         {games.map(game => {
                             return (
-                                <ul>
-                                    <li key={game.id}>{game.title}
-                                        <div>
-                                            <i class="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
-                                                {showRemoveForm === game.id && (
-                                                    <Modal onClose={()=> setShowRemoveForm(false)}>
-                                                        <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
-                                                    </Modal>
-                                                )}
-                                        </div>
-                                        <div>
-                                            <i class="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
-                                                {showUpdateForm === game.id && (
-                                                    <Modal onClose={()=> setShowUpdateForm(false)}>
-                                                        <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
-                                                    </Modal>
-                                                )}
-                                        </div>
-                                    </li>
-                                </ul>
+                                <>
+                                    <table>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Notes</th>
+                                            <th>Rating</th>
+                                            <th>Completed</th>
+                                            <th>Genre</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{game.title}</td>
+                                            <td>{game.notes}</td>
+                                            <td>{game.rating || 'N/A'}</td>
+                                            <td>{game.completed || 'N/A'}</td>
+                                            <td>{game.genre}</td>
+                                        </tr>
+                                    </table>
+                                            <div>
+                                                <i class="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
+                                                    {showRemoveForm === game.id && (
+                                                        <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                            <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
+                                                        </Modal>
+                                                    )}
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
+                                                    {showUpdateForm === game.id && (
+                                                        <Modal onClose={()=> setShowUpdateForm(false)}>
+                                                            <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
+                                                        </Modal>
+                                                    )}
+                                            </div>
+                                </>
                             )
                         })}
                     </div>
