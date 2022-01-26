@@ -63,12 +63,21 @@ const Shelfpage = () => {
                             })}
                         </div>
                         <div id='gameShelf-container'>
-                            <h1>test</h1>
+                            <h4>My Games: </h4>
                             {games.map(game => {
                                 return (
-                                    <ul>
-                                        <li key={game.id}>{game.title}</li>
-                                    </ul>
+                                    <table id='table-container'>
+                                        <tr id='table-header'>
+                                            <th>Title</th>
+                                            <th>Rating</th>
+                                            <th>Genre</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{game.title}</td>
+                                            <td>{game.rating}</td>
+                                            <td>{game.genre}</td>
+                                        </tr>
+                                    </table>
                                 )
                             })}
                         </div>
