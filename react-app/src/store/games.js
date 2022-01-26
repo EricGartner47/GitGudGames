@@ -121,7 +121,7 @@ export const gameReducer = (state = initialState, action) => {
             allGamesByShelf.forEach(game => {
                     gamesByShelf[game.id] = game
             })
-            return {...state, ...gamesByShelf}
+            return {...gamesByShelf}
         default:
             return state
     }
