@@ -21,6 +21,10 @@ const Shelfpage = () => {
         dispatch(loadShelves(user))
     }, [dispatch, user])
 
+    const games = shelves.map(shelf=>{
+        return Object.values(shelf.games)
+    })
+    console.log(games)
 
     if(user) {
         return (
@@ -34,23 +38,30 @@ const Shelfpage = () => {
                         <h4>My Shelves: </h4>
                         {shelves.map(shelf => {
                             return (
+                                    <ul>
+                                        <li key={shelf.id}>{shelf.title}
+                                        <i class="fas fa-edit" onClick={()=> setShowUpdateForm(shelf.id)}>
+                                            {showUpdateForm === shelf.id && (
+                                                <Modal onClose={()=> setShowUpdateForm(false)}>
+                                                    <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
+                                                </Modal>
+                                            )}
+                                        </i>
+                                        <i class="fas fa-trash" onClick={()=> setShowRemoveForm(shelf.id)}>
+                                            {showRemoveForm === shelf.id && (
+                                                <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                    <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
+                                                </Modal>
+                                            )}
+                                        </i>
+                                        </li>
+                                    </ul>
+                            )
+                        })}
+                        {games.map((game, i) => {
+                            return(
                                 <ul>
-                                    <li key={shelf.id}>{shelf.title}
-                                    <i class="fas fa-edit" onClick={()=> setShowUpdateForm(shelf.id)}>
-                                        {showUpdateForm === shelf.id && (
-                                            <Modal onClose={()=> setShowUpdateForm(false)}>
-                                                <ShelfFormUpdate shelf={shelf} hideForm={()=> setShowUpdateForm(false)}/>
-                                            </Modal>
-                                        )}
-                                    </i>
-                                    <i class="fas fa-trash" onClick={()=> setShowRemoveForm(shelf.id)}>
-                                        {showRemoveForm === shelf.id && (
-                                            <Modal onClose={()=> setShowRemoveForm(false)}>
-                                                <ShelfFormRemove shelf={shelf} hideForm={()=> setShowRemoveForm(false)}/>
-                                            </Modal>
-                                        )}
-                                    </i>
-                                    </li>
+                                    <li key={game[i]}>{game[i].title}</li>
                                 </ul>
                             )
                         })}

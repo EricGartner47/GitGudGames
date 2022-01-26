@@ -49,7 +49,9 @@ const Homepage = () => {
                                 })} */}
                             </div>
                     </div>
-                    <h3>Suggested Games</h3>
+                    <div id='suggest-games-container'>
+                        <h3>Suggested Games</h3>
+                    </div>
                 </section>
             </main>
         )
