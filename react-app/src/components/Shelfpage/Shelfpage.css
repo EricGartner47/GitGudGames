@@ -6,10 +6,18 @@
     height: 35vw;
     border: 1px solid #9a3c0c;
     border-radius: 3px;
+    display: flex;
+    flex-direction: column;
 }
 
 #create-shelf-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+#gameShelf-container {
+    background-color: white;
+    position: absolute;
+    right: 20vw;
 }

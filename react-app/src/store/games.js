@@ -1,6 +1,7 @@
 const LOAD_GAMES = 'games/LOAD_GAMES'
 const NEW_GAME = 'games/NEW_GAME'
 const REMOVE_GAME = 'games/REMOVE_GAME'
+const LOAD_GAMES_BY_SHELF = 'shelf/LOAD_GAMES_BY_SHELF'
 
 const getGame = (user, games) => {
     return {
@@ -21,6 +22,13 @@ const removeGame = (game) => {
     return {
         type: REMOVE_GAME,
         game
+    }
+}
+
+const getShelfById = (shelf) => {
+    return {
+        type: LOAD_GAMES_BY_SHELF,
+        shelf
     }
 }
 
@@ -82,6 +90,13 @@ export const updateGame = payload => async dispatch => {
     }
 }
 
+export const loadGamesbyShelfId = shelf => async dispatch => {
+    const res = await fetch(`/api/shelves/getGames/${shelf.id}`)
+    const data = await res.json();
+    dispatch(getShelfById(data))
+    return data;
+}
+
 const initialState = {}
 
 export const gameReducer = (state = initialState, action) => {
@@ -100,6 +115,13 @@ export const gameReducer = (state = initialState, action) => {
         case REMOVE_GAME:
             delete newState[action.game.id]
             return newState;
+        case LOAD_GAMES_BY_SHELF:
+            const gamesByShelf = {}
+            const allGamesByShelf = action.shelf.gamesByShelf
+            allGamesByShelf.forEach(game => {
+                    gamesByShelf[game.id] = game
+            })
+            return {...state, ...gamesByShelf}
         default:
             return state
     }
