@@ -28,9 +28,6 @@ main {
     justify-content: space-around;
 }
 
-#suggested-games {
-    display:flex;
-}
 
 #progress-games-list {
     display: flex;
@@ -41,6 +38,13 @@ main {
 }
 
 #currently-playing-container {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid #9a3c0c;
+    border-radius: 3px;
+}
+
+#suggested-games-container {
     background-color: white;
     padding: 8px;
     border: 1px solid #9a3c0c;

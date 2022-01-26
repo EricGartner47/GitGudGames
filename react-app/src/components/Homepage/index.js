@@ -38,6 +38,17 @@ const Homepage = () => {
                     <div id='currently-playing-container'>
                         <h3>Currently Playing</h3>
                             <div id='progress-games-list'>
+                                <ul>
+                                    <li>
+                                        Persona 4
+                                    </li>
+                                    <li>
+                                        Dead Space
+                                    </li>
+                                    <li>
+                                        Civilization VI
+                                    </li>
+                                </ul>
                                 {/* {games.map(game => {
                                     return (
                                         <ul id='progress-games-list'>
@@ -49,8 +60,22 @@ const Homepage = () => {
                                 })} */}
                             </div>
                     </div>
-                    <div id='suggest-games-container'>
+                    <div id='suggested-games-container'>
                         <h3>Suggested Games</h3>
+                        <ul>
+                            <li>
+                                Inscryption
+                            </li>
+                            <li>
+                                Hollow Knight
+                            </li>
+                            <li>
+                                Dead Cells
+                            </li>
+                            <li>
+                                Hades
+                            </li>
+                        </ul>
                     </div>
                 </section>
             </main>

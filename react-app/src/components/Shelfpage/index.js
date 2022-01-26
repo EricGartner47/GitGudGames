@@ -58,13 +58,13 @@ const Shelfpage = () => {
                                     </ul>
                             )
                         })}
-                        {games.map((game, i) => {
+                        {/* {games.map((game, i) => {
                             return(
                                 <ul>
                                     <li key={game[i]}>{game[i].title}</li>
                                 </ul>
                             )
-                        })}
+                        })} */}
                         <div id="create-shelf-container">
                             <h5>Create Shelf</h5>
                             <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}>
