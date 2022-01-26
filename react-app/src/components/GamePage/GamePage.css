@@ -12,10 +12,8 @@
 
 #gamePage-container {
     background-color: white;
-    width: 35vw;
     padding: 8px;
     margin: 8px;
-    height: 80vh;
     border: 1px solid #9a3c0c;
     border-radius: 3px;
 }
@@ -26,9 +24,23 @@
 
 #create-game-container {
     background-color: white;
-    height: 10vh;
     padding: 8px;
-    margin: 8px;
     border: 1px solid #9a3c0c;
     border-radius: 3px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+#game-edit-delete-container {
+    display: flex;
+    padding: 5px;
+}
+
+#game-edit-container{
+    padding: 5px;
+}
+
+#game-delete-container {
+    padding: 5px;
 }

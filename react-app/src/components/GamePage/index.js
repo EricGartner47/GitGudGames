@@ -56,21 +56,23 @@ const GamePage = () => {
                                             <td>{game.genre}</td>
                                         </tr>
                                     </table>
-                                            <div>
-                                                <i class="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
-                                                    {showRemoveForm === game.id && (
-                                                        <Modal onClose={()=> setShowRemoveForm(false)}>
-                                                            <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
-                                                        </Modal>
-                                                    )}
-                                            </div>
-                                            <div>
-                                                <i class="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
-                                                    {showUpdateForm === game.id && (
-                                                        <Modal onClose={()=> setShowUpdateForm(false)}>
-                                                            <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
-                                                        </Modal>
-                                                    )}
+                                            <div id='game-edit-delete-container'>
+                                                <div id='game-edit-container'>
+                                                    <i class="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
+                                                        {showRemoveForm === game.id && (
+                                                            <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                                <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
+                                                            </Modal>
+                                                        )}
+                                                </div>
+                                                <div id='game-delete-container'>
+                                                    <i class="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
+                                                        {showUpdateForm === game.id && (
+                                                            <Modal onClose={()=> setShowUpdateForm(false)}>
+                                                                <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
+                                                            </Modal>
+                                                        )}
+                                                </div>
                                             </div>
                                 </>
                             )
