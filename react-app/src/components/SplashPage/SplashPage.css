@@ -49,7 +49,7 @@ ul {
 
 .nav-footer-header{
     font-weight: 700;
-    color: #e75a10;
+    color: white;
     margin: 2px 0 8px 15px;
 }
 
@@ -99,4 +99,12 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.gitHub-link-footer-link{
+    padding: 5px;
+}
+
+.linkedIn-link-footer-link{
+    padding: 5px;
 }

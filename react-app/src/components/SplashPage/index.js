@@ -34,11 +34,11 @@ const SplashPage = () => {
                         </div>
                         <div id='gitHub-container'>
                             <i className="fas fa-gamepad"></i>
-                            <a className="gitHub-link footer-link" href="https://github.com/EricGartner47">Github</a>
+                            <a className="gitHub-link-footer-link" href="https://github.com/EricGartner47">Github</a>
                         </div>
                         <div id="linkedIn-container">
                             <i className="fas fa-gamepad"></i>
-                            <a className="linkedIn-link footer-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">LinkedIn</a>
+                            <a className="linkedIn-link-footer-link"href="https://www.linkedin.com/in/eric-gartner-731907a0/">LinkedIn</a>
                         </div>
                     </div>
                 </div>
