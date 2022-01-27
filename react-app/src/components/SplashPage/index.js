@@ -16,13 +16,14 @@ const SplashPage = () => {
      return (
         <>
             <div id='intro-container'>
+                <h1>Welcome to Git Gud Games!</h1>
                 <h2>Need to track your gaming progress?</h2>
                 <p>You're in the right place. Enter your gaming details, and we'll track your progress for you. </p>
             </div>
-            <div id="mario-splashpage">
+            {/* <div id="mario-splashpage">
                 <img alt='' src="https://toppng.com/uploads/preview/8-bit-mario-8-bit-luigi-pixel-115633511986zud7ifcqi.png" id="mario-image">
                 </img>
-            </div>
+            </div> */}
             <footer id="splashpage-footer">
             <div className='footer-nav-div'>
                 <ul className="nav-footer-list">
