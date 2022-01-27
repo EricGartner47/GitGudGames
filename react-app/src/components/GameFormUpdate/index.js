@@ -80,7 +80,10 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         <option value="Puzzler">Puzzler</option>
                         <option value="Strategy">Strategy</option>
                     </select>
-                    <select onChange={(e)=> {setShelf_id(e.target.value)}}>
+                    <select
+                        value={shelf_id || 'select'}
+                        onChange={(e)=> {setShelf_id(e.target.value)}}>
+
                         {shelves.map(shelf => {
                             return <option key={shelf.id} value={shelf.id}>{shelf.title}</option>
                         })}
