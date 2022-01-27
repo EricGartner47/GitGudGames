@@ -23,11 +23,11 @@ def get_all_games(id):
     return {'games': [game.to_dict() for game in results]}
 
 #get 3 games
-@game_routes.route('/<int:id>/three')
-def get_3_games(id):
-    user = User.query.get(id)
-    results = Game.query.filter(Game.user_id == user.id).limit(3).all()
-    return {'games': [game.to_dict() for game in results]}
+# @game_routes.route('/<int:id>/three')
+# def get_3_games(id):
+#     user = User.query.get(id)
+#     results = Game.query.filter(Game.user_id == user.id and Game.shelf_id == '2').all()
+#     return {'games': [game.to_dict() for game in results]}
 
 #create game
 @game_routes.route('/<int:id>', methods=['POST'])
