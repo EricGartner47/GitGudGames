@@ -60,26 +60,26 @@ const Shelfpage = () => {
                         </div>
                         <div id='gameShelf-container'>
                             <h4>My Games: </h4>
+                            <table id='table-container'>
+                                <thead>
+                                    <tr id='table-header'>
+                                        <th>Title</th>
+                                        <th>Rating</th>
+                                        <th>Genre</th>
+                                    </tr>
+                                </thead>
                             {games.map(game => {
                                 return (
-                                    <table id='table-container'>
-                                        <thead>
-                                            <tr id='table-header' key={game.shelf_id}>
-                                                <th>Title</th>
-                                                <th>Rating</th>
-                                                <th>Genre</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr key={game.id}>
-                                                <td>{game.title}</td>
-                                                <td>{game.rating || 'N/A'}</td>
-                                                <td>{game.genre}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <tbody>
+                                        <tr key={game.id}>
+                                            <td>{game.title}</td>
+                                            <td>{game.rating || 'N/A'}</td>
+                                            <td>{game.genre}</td>
+                                        </tr>
+                                    </tbody>
                                 )
                             })}
+                            </table>
                         </div>
                         <div id="create-shelf-container">
                             <h5>Create Shelf</h5>
