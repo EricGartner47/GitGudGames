@@ -33,7 +33,7 @@ const LoginForm = () => {
 
   return (
     <>
-      <div id="gitgud-container">
+      <div className="gitgud-logo-container">
         <Link to='/' className='gitgud-logo'>
           <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
         </Link>
