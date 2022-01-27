@@ -12,21 +12,18 @@ const NavBar = () => {
         </NavLink>
       </div>
       <div id="new-account-box">
-        <h2>Discover & game more</h2>
+        <h2 id='nav-bar-header'>Discover & game more</h2>
         <div id="sign-up-container">
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign up with email
+            Sign up
           </NavLink>
         </div>
         <div id="log-in-container">
-          <div>
-            Already a member?
-          </div>
           <NavLink to='/login' exact={true} activeClassName='active'>
             Sign In
           </NavLink>
         </div>
-        <div>
+        <div id='demo-log-in-container'>
           <DemoLogin />
         </div>
       </div>

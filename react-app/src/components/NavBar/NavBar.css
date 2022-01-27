@@ -7,7 +7,8 @@
 
 #splashpage-nav a:link, a:visited{
     text-decoration: none;
-    color: #9a3c0c;
+    color: #e75a10;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
@@ -16,12 +17,30 @@
     margin: 14px 6px 0 0;
     font-family: 'Press Start 2P', cursive;
     padding: 24px;
-    background: #FFFFFF;
+    background: #ffa542;
     border: 1px solid #9a3c0c;
     border-radius: 10px;
     text-decoration: none;
+
 }
 
 #splashpage-logo {
     padding: 8px;
+}
+
+#sign-up-container{
+    margin: 5px;
+}
+
+#log-in-container {
+    margin: 5px;
+}
+
+#demo-log-in-container {
+    margin: 5px;
+}
+
+#nav-bar-header {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
