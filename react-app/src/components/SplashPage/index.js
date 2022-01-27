@@ -19,8 +19,10 @@ const SplashPage = () => {
                 <h2>Need to track your gaming progress?</h2>
                 <p>You're in the right place. Enter your gaming details, and we'll track your progress for you. </p>
             </div>
-            <img alt='' id="mario-splashpage">
-            </img>
+            <div id="mario-splashpage">
+                <img alt='' src="https://toppng.com/uploads/preview/8-bit-mario-8-bit-luigi-pixel-115633511986zud7ifcqi.png" id="mario-image">
+                </img>
+            </div>
             <footer id="splashpage-footer">
             <div className='footer-nav-div'>
                 <ul className="nav-footer-list">
