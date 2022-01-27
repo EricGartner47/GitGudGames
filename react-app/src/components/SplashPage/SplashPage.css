@@ -1,20 +1,13 @@
 .footer-nav-div {
-    display: inline-block;
-    box-sizing: border-box;
     font-size: 15px;
     font-weight: 400px;
     min-width: 140px;
     max-width: 180px;
 }
 
-.footer-nav-div li {
-    margin-top: 0;
-    text-align: -webkit-match-parent;
-}
-
 .footer-nav-div a {
     line-height: 24px;
-    color: #9a3c0c;
+    color: white;
     padding-top: 0;
     padding-bottom: 0;
     text-decoration: none;
@@ -56,21 +49,20 @@ ul {
 
 .nav-footer-header{
     font-weight: 700;
-    color: black;
+    color: #e75a10;
     margin: 2px 0 8px 15px;
 }
 
 #splashpage-footer {
     margin-top: 10px;
-    background-color: #fff;
-    border: 1px solid #9a3c0c;
+    color: #e75a10;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     padding: 16px;
     height: 25%;
-    width: 25%;
     font-size: 16px;
     box-sizing: border-box;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     border-radius: 3px;
 }
@@ -86,7 +78,11 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: #e75a10;
+    background-color: #ffa542;
+    border: 1px solid #946224;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-radius: 3px;
 }
 
 #mario-image {
@@ -97,4 +93,10 @@ ul {
 
 img {
     background-color: transparent;
+}
+
+#banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
