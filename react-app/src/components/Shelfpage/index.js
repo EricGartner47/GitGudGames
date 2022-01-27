@@ -24,10 +24,6 @@ const Shelfpage = () => {
         dispatch(loadShelves(user))
     }, [dispatch, user])
 
-    // const games = shelves.map(shelf=>{
-    //     return Object.values(shelf.games)
-    // })
-
     if(user) {
         return (
             <div>
@@ -44,13 +40,13 @@ const Shelfpage = () => {
                                     <>
                                         <ul>
                                             <li key={shelf.id} onClick={()=> dispatch(loadGamesbyShelfId(shelf))}>{shelf.title}
-                                            <i class="fas fa-edit" onClick={()=> setUpdateFormModal(shelf.id)}></i>
+                                            <i className="fas fa-edit" onClick={()=> setUpdateFormModal(shelf.id)}></i>
                                                 {UpdateFormModal === shelf.id && (
                                                     <Modal onClose={()=> setUpdateFormModal(false)}>
                                                         <ShelfFormUpdate shelf={shelf} hideForm={()=> setUpdateFormModal(false)}/>
                                                     </Modal>
                                                 )}
-                                            <i class="fas fa-trash" onClick={()=> setRemoveFormModal(shelf.id)}></i>
+                                            <i className="fas fa-trash" onClick={()=> setRemoveFormModal(shelf.id)}></i>
                                                 {RemoveFormModal === shelf.id && (
                                                     <Modal onClose={()=> setRemoveFormModal(false)}>
                                                         <ShelfFormRemove shelf={shelf} hideForm={()=> setRemoveFormModal(false)}/>
@@ -67,23 +63,27 @@ const Shelfpage = () => {
                             {games.map(game => {
                                 return (
                                     <table id='table-container'>
-                                        <tr id='table-header'>
-                                            <th>Title</th>
-                                            <th>Rating</th>
-                                            <th>Genre</th>
-                                        </tr>
-                                        <tr>
-                                            <td>{game.title}</td>
-                                            <td>{game.rating || 'N/A'}</td>
-                                            <td>{game.genre}</td>
-                                        </tr>
+                                        <thead>
+                                            <tr id='table-header' key={game.shelf_id}>
+                                                <th>Title</th>
+                                                <th>Rating</th>
+                                                <th>Genre</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr key={game.id}>
+                                                <td>{game.title}</td>
+                                                <td>{game.rating || 'N/A'}</td>
+                                                <td>{game.genre}</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 )
                             })}
                         </div>
                         <div id="create-shelf-container">
                             <h5>Create Shelf</h5>
-                            <i class="fas fa-plus-square" onClick={()=> setCreateFormModal(true)}></i>
+                            <i className="fas fa-plus-square" onClick={()=> setCreateFormModal(true)}></i>
                                 {CreateFormModal && (
                                     <Modal onClose={()=> setCreateFormModal(false)}>
                                         <ShelfFormNew hideForm={()=> setCreateFormModal(false)}/>

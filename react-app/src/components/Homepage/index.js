@@ -11,9 +11,12 @@ const Homepage = () => {
     const games = Object.values(userGames)
     const dispatch = useDispatch()
 
+    if(!user){
+        <Redirect to="/" />
+    }
     useEffect(()=> {
         dispatch(loadGames(user))
-    }, [dispatch, user])
+    },[])
 
     const currentGames = games.filter(game => game.shelf_id === 2)
 
@@ -41,6 +44,37 @@ const Homepage = () => {
                         <h3>Currently Playing</h3>
                         <div id='progress-games-list'>
                             <table>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Title
+                                        </th>
+                                        <th>
+                                            Genre
+                                        </th>
+                                        <th>
+                                            Progress
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {currentGames.map(game => {
+                                        return (
+                                            <tr key={game.id}>
+                                                <td>{game.title}</td>
+                                                <td>{game.genre}</td>
+                                                <td>N/A</td>
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id='suggested-games-container'>
+                        <h3>Suggested Games</h3>
+                        <table>
+                            <thead>
                                 <tr>
                                     <th>
                                         Title
@@ -49,68 +83,45 @@ const Homepage = () => {
                                         Genre
                                     </th>
                                     <th>
-                                        Progress
+                                        Average Rating
                                     </th>
                                 </tr>
-                                {currentGames.map(game => {
-                                    return (
-                                        <tr>
-                                            <td>{game.title}</td>
-                                            <td>{game.genre}</td>
-                                            <td>N/A</td>
-                                        </tr>
-                                    )
-                                })}
-                            </table>
-                        </div>
-                    </div>
-                    <div id='suggested-games-container'>
-                        <h3>Suggested Games</h3>
-                        <table>
-                            <tr>
-                                <th>
-                                    Title
-                                </th>
-                                <th>
-                                    Genre
-                                </th>
-                                <th>
-                                    Average Rating
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Sekiro: Shadows Die Twice
-                                </td>
-                                <td>
-                                    Adventure
-                                </td>
-                                <td>
-                                    4.5
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Insrycption
-                                </td>
-                                <td>
-                                    Puzzler
-                                </td>
-                                <td>
-                                    4.8
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    METAL GEAR SOLID V: PHANTOM PAIN
-                                </td>
-                                <td>
-                                    Sandbox
-                                </td>
-                                <td>
-                                    5
-                                </td>
-                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Sekiro: Shadows Die Twice
+                                    </td>
+                                    <td>
+                                        Adventure
+                                    </td>
+                                    <td>
+                                        4.5
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Insrycption
+                                    </td>
+                                    <td>
+                                        Puzzler
+                                    </td>
+                                    <td>
+                                        4.8
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        METAL GEAR SOLID V: PHANTOM PAIN
+                                    </td>
+                                    <td>
+                                        Sandbox
+                                    </td>
+                                    <td>
+                                        5
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </section>

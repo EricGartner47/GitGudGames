@@ -4,12 +4,11 @@ import { updateGame } from '../../store/games';
 import './GameFormUpdate.css'
 
 const GameFormUpdate =({game, hideForm, shelves}) => {
-    console.log(game.shelf_id)
     const user = useSelector(state => state.session.user)
     const [title, setTitle] = useState(game.title);
     const [notes, setNotes] = useState(game.notes);
     const [rating, setRating] = useState(game.rating);
-    const [completed, setCompleted] = useState(game.completed);
+    const [completed, setCompleted] = useState(game.completed || false);
     const [genre, setGenre] = useState(game.genre)
     const [shelf_id, setShelf_id] = useState(game.shelf_id)
     const [errors, setErrors] = useState([])
@@ -67,7 +66,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                     />
                     <input
                         type="checkbox"
-                        value={completed}
+                        checked={completed}
                         onChange={(e)=> {setCompleted(!completed)}}
                     />
                     <select onChange={(e)=> {setGenre(e.target.value)}}>
@@ -93,7 +92,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         {error}
                     </div>
                 ))}
-                <i class="far fa-save" onClick={onSubmit}></i>
+                <i className="far fa-save" onClick={onSubmit}></i>
             </form>
         </div>
     )

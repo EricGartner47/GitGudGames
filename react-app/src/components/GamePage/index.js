@@ -41,24 +41,28 @@ const GamePage = () => {
                             return (
                                 <>
                                     <table>
-                                        <tr>
-                                            <th>Title</th>
-                                            <th>Notes</th>
-                                            <th>Rating</th>
-                                            <th>Completed</th>
-                                            <th>Genre</th>
-                                        </tr>
-                                        <tr>
-                                            <td>{game.title}</td>
-                                            <td>{game.notes}</td>
-                                            <td>{game.rating || 'N/A'}</td>
-                                            <td>{game.completed || 'N/A'}</td>
-                                            <td>{game.genre}</td>
-                                        </tr>
+                                        <thead key={Math.random()}>
+                                            <tr key={Math.random()}>
+                                                <th>Title</th>
+                                                <th>Notes</th>
+                                                <th>Rating</th>
+                                                <th>Completed</th>
+                                                <th>Genre</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody key={Math.random()}>
+                                            <tr key={Math.random()}>
+                                                <td>{game.title}</td>
+                                                <td>{game.notes}</td>
+                                                <td>{game.rating || 'N/A'}</td>
+                                                <td>{game.completed? 'Finished' : "N/A"}</td>
+                                                <td>{game.genre}</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                             <div id='game-edit-delete-container'>
                                                 <div id='game-edit-container'>
-                                                    <i class="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
+                                                    <i className="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
                                                         {showRemoveForm === game.id && (
                                                             <Modal onClose={()=> setShowRemoveForm(false)}>
                                                                 <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
@@ -66,7 +70,7 @@ const GamePage = () => {
                                                         )}
                                                 </div>
                                                 <div id='game-delete-container'>
-                                                    <i class="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
+                                                    <i className="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
                                                         {showUpdateForm === game.id && (
                                                             <Modal onClose={()=> setShowUpdateForm(false)}>
                                                                 <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
@@ -80,7 +84,7 @@ const GamePage = () => {
                     </div>
                     <div id="create-game-container">
                         <h5>Create Game</h5>
-                        <i class="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}></i>
+                        <i className="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}></i>
                             {showCreateForm && (
                                 <Modal onClose={()=> setShowCreateForm(false)}>
                                     <GameFormNew hideForm={()=> setShowCreateForm(false)} shelves={shelves}/>
