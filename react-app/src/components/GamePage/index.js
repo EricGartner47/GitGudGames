@@ -37,50 +37,50 @@ const GamePage = () => {
                 <div id="fullGamePage-container">
                     <div id="gamePage-container">
                         <h4>My Games: </h4>
+                        <table>
+                            <thead>
+                                <tr key={user.id}>
+                                    <th>Title</th>
+                                    <th>Notes</th>
+                                    <th>Rating</th>
+                                    <th>Completed</th>
+                                    <th>Genre</th>
+                                    <th>Delete</th>
+                                    <th>Edit</th>
+                                </tr>
+                        </thead>
                         {games.map(game => {
                             return (
                                 <>
-                                    <table>
-                                        <thead key={Math.random()}>
-                                            <tr key={Math.random()}>
-                                                <th>Title</th>
-                                                <th>Notes</th>
-                                                <th>Rating</th>
-                                                <th>Completed</th>
-                                                <th>Genre</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody key={Math.random()}>
-                                            <tr key={Math.random()}>
-                                                <td>{game.title}</td>
-                                                <td>{game.notes}</td>
-                                                <td>{game.rating || 'N/A'}</td>
-                                                <td>{game.completed? 'Finished' : "N/A"}</td>
-                                                <td>{game.genre}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                            <div id='game-edit-delete-container'>
-                                                <div id='game-edit-container'>
-                                                    <i className="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
-                                                        {showRemoveForm === game.id && (
-                                                            <Modal onClose={()=> setShowRemoveForm(false)}>
-                                                                <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
-                                                            </Modal>
-                                                        )}
-                                                </div>
-                                                <div id='game-delete-container'>
-                                                    <i className="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
-                                                        {showUpdateForm === game.id && (
-                                                            <Modal onClose={()=> setShowUpdateForm(false)}>
-                                                                <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
-                                                            </Modal>
-                                                        )}
-                                                </div>
-                                            </div>
+                                    <tbody>
+                                        <tr key={game.id}>
+                                            <td>{game.title}</td>
+                                            <td>{game.notes}</td>
+                                            <td>{game.rating || 'N/A'}</td>
+                                            <td>{game.completed? 'Finished' : "N/A"}</td>
+                                            <td>{game.genre}</td>
+                                            <td>
+                                                <i className="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
+                                                {showRemoveForm === game.id && (
+                                                    <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                        <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
+                                                    </Modal>
+                                                )}
+                                            </td>
+                                            <td>
+                                                <i className="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
+                                                {showUpdateForm === game.id && (
+                                                    <Modal onClose={()=> setShowUpdateForm(false)}>
+                                                        <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
+                                                    </Modal>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </>
                             )
                         })}
+                        </table>
                     </div>
                     <div id="create-game-container">
                         <h5>Create Game</h5>
