@@ -39,32 +39,30 @@ const Homepage = () => {
                 <section id="progress-tracker">
                     <div id='currently-playing-container'>
                         <h3>Currently Playing</h3>
-                            <div id='progress-games-list'>
+                        <div id='progress-games-list'>
                             <table>
-                            <tr>
-                                <th>
-                                    Title
-                                </th>
-                                <th>
-                                    Genre
-                                </th>
-                                <th>
-                                    Progress
-                                </th>
-                            </tr>
-                            {currentGames.map(game => {
+                                <tr>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Genre
+                                    </th>
+                                    <th>
+                                        Progress
+                                    </th>
+                                </tr>
+                                {currentGames.map(game => {
                                     return (
                                         <tr>
                                             <td>{game.title}</td>
                                             <td>{game.genre}</td>
-                                            <td>{game.title}</td>
-
+                                            <td>N/A</td>
                                         </tr>
                                     )
-                            })}
-
-                        </table>
-                    </div>
+                                })}
+                            </table>
+                        </div>
                     </div>
                     <div id='suggested-games-container'>
                         <h3>Suggested Games</h3>

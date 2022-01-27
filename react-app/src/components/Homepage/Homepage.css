@@ -26,15 +26,14 @@ main {
     position: relative;
     top: 60px;
     justify-content: space-around;
+    margin: 2px;
 }
 
 
 #progress-games-list {
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 5%;
-    right: 5%;
+
 }
 
 #currently-playing-container {
@@ -42,6 +41,8 @@ main {
     padding: 8px;
     border: 1px solid #9a3c0c;
     border-radius: 3px;
+    height: 50vh;
+    margin: 3px;
 }
 
 #suggested-games-container {
@@ -49,4 +50,5 @@ main {
     padding: 8px;
     border: 1px solid #9a3c0c;
     border-radius: 3px;
+    margin: 3px;
 }
