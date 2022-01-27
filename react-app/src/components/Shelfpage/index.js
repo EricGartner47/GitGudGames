@@ -39,7 +39,7 @@ const Shelfpage = () => {
                                 return (
                                     <>
                                         <ul>
-                                            <li key={shelf.id} onClick={()=> dispatch(loadGamesbyShelfId(shelf))}>{shelf.title}
+                                            <li key={shelf.id} onClick={()=> dispatch(loadGamesbyShelfId(shelf))} id="list-of-shelves">{shelf.title}
                                             <i className="fas fa-edit" onClick={()=> setUpdateFormModal(shelf.id)}></i>
                                                 {UpdateFormModal === shelf.id && (
                                                     <Modal onClose={()=> setUpdateFormModal(false)}>

@@ -48,3 +48,7 @@ th {
 #shelfpage-nav-bar {
     padding: 8px;
 }
+
+#list-of-shelves:hover{
+    cursor: pointer;
+}
