@@ -41,7 +41,7 @@ const GamePage = () => {
                             <thead>
                                 <tr key={user.id}>
                                     <th>Title</th>
-                                    <th>Notes</th>
+                                    <th>Progress</th>
                                     <th>Rating</th>
                                     <th>Completed</th>
                                     <th>Genre</th>

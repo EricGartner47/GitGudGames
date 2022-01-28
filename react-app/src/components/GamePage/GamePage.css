@@ -23,13 +23,17 @@
 }
 
 #create-game-container {
-    background-color: white;
+    background-color: #ffa542;
     padding: 8px;
     border: 1px solid #9a3c0c;
     border-radius: 3px;
     position: absolute;
     top: 8px;
     right: 8px;
+    color: #e75a10;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-clip: content-box;
+    box-shadow: inset 0 0 0 8px;
 }
 
 #game-edit-delete-container {
