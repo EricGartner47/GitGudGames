@@ -45,8 +45,8 @@ const GamePage = () => {
                                     <th>Rating</th>
                                     <th>Completed</th>
                                     <th>Genre</th>
-                                    <th>Delete</th>
                                     <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                         </thead>
                         {games.map(game => {
@@ -60,18 +60,18 @@ const GamePage = () => {
                                             <td>{game.completed? 'Finished' : "N/A"}</td>
                                             <td>{game.genre}</td>
                                             <td>
-                                                <i className="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
-                                                {showRemoveForm === game.id && (
-                                                    <Modal onClose={()=> setShowRemoveForm(false)}>
-                                                        <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
-                                                    </Modal>
-                                                )}
-                                            </td>
-                                            <td>
                                                 <i className="fas fa-edit" onClick={()=> setShowUpdateForm(game.id)}></i>
                                                 {showUpdateForm === game.id && (
                                                     <Modal onClose={()=> setShowUpdateForm(false)}>
                                                         <GameFormUpdate game={game} hideForm={()=> setShowUpdateForm(false)} shelves={shelves}/>
+                                                    </Modal>
+                                                )}
+                                            </td>
+                                            <td>
+                                                <i className="fas fa-trash" onClick={()=> setShowRemoveForm(game.id)}></i>
+                                                {showRemoveForm === game.id && (
+                                                    <Modal onClose={()=> setShowRemoveForm(false)}>
+                                                        <GameFormRemove game={game} hideForm={()=> setShowRemoveForm(false)} />
                                                     </Modal>
                                                 )}
                                             </td>
