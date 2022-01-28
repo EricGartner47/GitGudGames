@@ -10,7 +10,6 @@ const Userbar = () => {
         <nav id="userbar">
             <div id='userProfile'>
                 <span>{user.username}</span>
-                <span>{user.email}</span>
             </div>
             <LogoutButton />
         </nav>

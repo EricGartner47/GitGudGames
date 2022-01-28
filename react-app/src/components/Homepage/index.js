@@ -32,7 +32,7 @@ const Homepage = () => {
                     <div id='my-shelves-link'>
                         <Link to="/app/shelves">My Shelves</Link>
                     </div>
-                    <div id='my=games-link'>
+                    <div id='my-games-link'>
                         <Link to="/app/games">My Games</Link>
                     </div>
                     <div>

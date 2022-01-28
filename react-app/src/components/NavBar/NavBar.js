@@ -15,7 +15,7 @@ const NavBar = () => {
         <h2 id='nav-bar-header'>Discover & game more</h2>
         <div id="sign-up-container">
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign up
+            Sign Up
           </NavLink>
         </div>
         <div id="log-in-container">
