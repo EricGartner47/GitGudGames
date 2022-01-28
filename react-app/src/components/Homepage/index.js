@@ -63,7 +63,7 @@ const Homepage = () => {
                                             <tr key={game.id}>
                                                 <td>{game.title}</td>
                                                 <td>{game.genre}</td>
-                                                <td>N/A</td>
+                                                <td>{game.notes}</td>
                                             </tr>
                                         )
                                     })}

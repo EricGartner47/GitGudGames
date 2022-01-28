@@ -81,6 +81,7 @@ const Shelfpage = () => {
                             })}
                             </table>
                         </div>
+                    </div>
                         <div id="create-shelf-container">
                             <h5>Create Shelf</h5>
                             <i className="fas fa-plus-square" onClick={()=> setCreateFormModal(true)}></i>
@@ -90,7 +91,6 @@ const Shelfpage = () => {
                                     </Modal>
                                 )}
                         </div>
-                    </div>
             </div>
         )
     } else return (

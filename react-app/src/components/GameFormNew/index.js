@@ -64,7 +64,7 @@ const GameFormNew = ({hideForm, shelves}) => {
                         type="text"
                         value={notes}
                         onChange={(e)=> {setNotes(e.target.value)}}
-                        placeholder='Enter Notes'
+                        placeholder='Enter Progress'
                     />
                     <input
                         type="number"
