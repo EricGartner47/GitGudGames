@@ -58,3 +58,11 @@ th {
 #list-of-shelves:hover{
     cursor: pointer;
 }
+
+.fa-edit {
+    padding: 5px;
+}
+
+.fa-trash {
+    padding: 5px;
+}

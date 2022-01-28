@@ -31,7 +31,6 @@ const ShelfFormUpdate = ({shelf, hideForm}) => {
         <div>
             <form onSubmit={onSubmit}>
                 <h4>Rename Shelf</h4>
-                <label>Shelf Title</label>
                 <input
                     type="text"
                     value={title}

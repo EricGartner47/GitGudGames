@@ -13,6 +13,7 @@ input, textarea {
     border: 1px solid #9a3c0c;
     border-radius: 3px;
     outline:  none;
+    margin: 5px;
 }
 
 a {
@@ -35,4 +36,8 @@ button:active{
 
 button:hover{
     cursor: pointer;
+}
+
+label {
+    margin: 8px;
 }

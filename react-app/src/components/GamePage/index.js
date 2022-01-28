@@ -36,7 +36,9 @@ const GamePage = () => {
                 </div>
                 <div id="fullGamePage-container">
                     <div id="gamePage-container">
-                        <h4>My Games: </h4>
+                        <div>
+                            <h4>My Games: </h4>
+                        </div>
                         <table>
                             <thead>
                                 <tr key={user.id}>

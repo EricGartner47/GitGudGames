@@ -26,7 +26,7 @@ const ShelfFormRemove = ({shelf, hideForm}) => {
         <div>
             <form onSubmit={onSubmit}>
                 <h4>Remove shelf</h4>
-                <label>Do you wish to remove the shelf "{shelf.title}"?</label>
+                <label>Do you wish to delete "{shelf.title}"?</label>
                 <button type="submit">Delete Shelf</button>
             </form>
         </div>
