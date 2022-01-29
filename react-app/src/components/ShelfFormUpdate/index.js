@@ -47,7 +47,7 @@ const ShelfFormUpdate = ({shelf, hideForm}) => {
                         {error}
                     </div>
                 ))}
-                <i className="far fa-save" onClick={onSubmit}></i>
+                <button type="submit">Update Shelf</button>
             </form>
         </div>
     )

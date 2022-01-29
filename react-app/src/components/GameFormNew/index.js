@@ -98,7 +98,7 @@ const GameFormNew = ({hideForm, shelves}) => {
                             {error}
                         </div>
                     ))}
-                    <i className="far fa-save" onClick={onSubmit}></i>
+                    <button type="submit">Create Game</button>
             </form>
         </div>
     )

@@ -81,8 +81,9 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                     </select>
                     <select
                         value={shelf_id || 'select'}
-                        onChange={(e)=> {setShelf_id(e.target.value)}}>
-
+                        onChange={(e)=> {setShelf_id(e.target.value)}}
+                        required
+                        >
                         {shelves.map(shelf => {
                             return <option key={shelf.id} value={shelf.id}>{shelf.title}</option>
                         })}
@@ -92,7 +93,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         {error}
                     </div>
                 ))}
-                <i className="far fa-save" onClick={onSubmit}></i>
+                <button type="submit">Update Game</button>
             </form>
         </div>
     )
