@@ -10,7 +10,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
     const [rating, setRating] = useState(game.rating);
     const [completed, setCompleted] = useState(game.completed || false);
     const [genre, setGenre] = useState(game.genre)
-    const [shelf_id, setShelf_id] = useState(game.shelf_id)
+    const [shelf_id, setShelf_id] = useState(game.shelf_id || 'select')
     const [errors, setErrors] = useState([])
     const dispatch = useDispatch();
 
@@ -80,9 +80,8 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         <option value="Strategy">Strategy</option>
                     </select>
                     <select
-                        value={shelf_id || 'select'}
+                        value={shelf_id || 'select' }
                         onChange={(e)=> {setShelf_id(e.target.value)}}
-                        required
                         >
                         {shelves.map(shelf => {
                             return <option key={shelf.id} value={shelf.id}>{shelf.title}</option>
