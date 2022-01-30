@@ -9,7 +9,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
     const [notes, setNotes] = useState(game.notes);
     const [rating, setRating] = useState(game.rating);
     const [completed, setCompleted] = useState(game.completed || false);
-    const [genre, setGenre] = useState(game.genre)
+    const [genre, setGenre] = useState(game.genre || 'select')
     const [shelf_id, setShelf_id] = useState(game.shelf_id || 'select')
     const [errors, setErrors] = useState([])
     const dispatch = useDispatch();
@@ -69,7 +69,9 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         checked={completed}
                         onChange={(e)=> {setCompleted(!completed)}}
                     />
-                    <select onChange={(e)=> {setGenre(e.target.value)}}>
+                    <select onChange={(e)=> {setGenre(e.target.value)}}
+                        value ={game.genre || 'select'}
+                    >
                         <option value="Shooter">Shooter</option>
                         <option value="RPG">RPG</option>
                         <option value="Adventure">Adventure</option>
