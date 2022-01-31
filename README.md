@@ -28,24 +28,24 @@ A Flask server is used to handle the backend communication. PostgreSQL is used t
 ## Key Features
 ### User Authorization
 User authorization is handled using Flask password hashing. When users log in, the password they provide is rehashed and checked against the original password.
-![Log In Page]()
-![Splash Page]()
+![Log In Page](https://github.com/EricGartner47/GitGudGames/blob/main/planning/Login_page-app.png)
+![Splash Page](https://github.com/EricGartner47/GitGudGames/blob/main/planning/splash_page-app.png)
 
-### Shelves
+### Games
 An authorized user can create a shelf that can then be seen by any logged in user. Only the authorized user may then edit or delete the created shelf.
-![Shelves]()
+![Shelves](https://github.com/EricGartner47/GitGudGames/blob/main/planning/shelf_page-app.png)
 
 ### Search Games or Shelves (In development)
 A user can search games or shelves by keyword in the search bar. The search will generate the shelve or game found by keyword.
-![Search]()
+
 
 ### Game Progress
 A user can view their progress in a game.
-![Game Progress]()
+![Game Progress](https://github.com/EricGartner47/GitGudGames/blob/main/planning/home_page-app.png)
 
-### Shelves
-An authorized user may create a shelf. Only the authorized user can then edit or delete a shelf.
-![Shelves]()
+### Games
+An authorized user may create a game. Only the authorized user can then edit or delete a game.
+![Games](https://github.com/EricGartner47/GitGudGames/blob/main/planning/game_page-app.png)
 
 ## Conclusion and Next Steps
 I am happy with the functionality and the initial styling. However, I would have like to implement sound whenever a user opens a modal. Additionally, I would like to implement an API to generate images for each game when created. 
