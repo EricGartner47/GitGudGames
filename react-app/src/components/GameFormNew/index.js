@@ -78,7 +78,9 @@ const GameFormNew = ({hideForm, shelves}) => {
                         value={completed}
                         onChange={(e)=> {setCompleted(!completed)}}
                     />
-                    <select onChange={(e)=> {setGenre(e.target.value)}}>
+                    <select onChange={(e)=> {setGenre(e.target.value)}}
+                        id='genre-input'
+                    >
                         <option value="Shooter">Shooter</option>
                         <option value="RPG">RPG</option>
                         <option value="Adventure">Adventure</option>
@@ -88,7 +90,9 @@ const GameFormNew = ({hideForm, shelves}) => {
                         <option value="Puzzler">Puzzler</option>
                         <option value="Strategy">Strategy</option>
                     </select>
-                    <select onChange={(e)=> {setShelf_id(e.target.value)}}>
+                    <select onChange={(e)=> {setShelf_id(e.target.value)}}
+                        id='shelf-id-input'
+                    >
                         {shelves.map(shelf => {
                             return <option key={shelf.id} value={shelf.id}>{shelf.title}</option>
                         })}
