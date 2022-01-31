@@ -73,7 +73,9 @@ const GameFormNew = ({hideForm, shelves}) => {
                         value={rating}
                         onChange={(e)=> {setRating(e.target.value)}}
                     />
+                    <label htmlFor='completed-box'>Complete?</label>
                     <input
+                        id='completed-box'
                         type="checkbox"
                         value={completed}
                         onChange={(e)=> {setCompleted(!completed)}}
