@@ -31,7 +31,7 @@ User authorization is handled using Flask password hashing. When users log in, t
 ![Log In Page](https://github.com/EricGartner47/GitGudGames/blob/main/planning/Login_page-app.png)
 ![Splash Page](https://github.com/EricGartner47/GitGudGames/blob/main/planning/splash_page-app.png)
 
-### Games
+### Shelves
 An authorized user can create a shelf that can then be seen by any logged in user. Only the authorized user may then edit or delete the created shelf.
 ![Shelves](https://github.com/EricGartner47/GitGudGames/blob/main/planning/shelf_page-app.png)
 
