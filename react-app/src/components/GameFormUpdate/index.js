@@ -64,13 +64,16 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         onChange={(e)=> {setRating(e.target.value)}}
                         required
                     />
+                    <label htmlFor='completed-box'>Complete?</label>
                     <input
+                        id='completed-box'
                         type="checkbox"
                         checked={completed}
                         onChange={(e)=> {setCompleted(!completed)}}
                     />
                     <select onChange={(e)=> {setGenre(e.target.value)}}
                         value ={game.genre || 'select'}
+                        id='genre-input'
                     >
                         <option value="Shooter">Shooter</option>
                         <option value="RPG">RPG</option>
@@ -82,6 +85,7 @@ const GameFormUpdate =({game, hideForm, shelves}) => {
                         <option value="Strategy">Strategy</option>
                     </select>
                     <select
+                        id='shelf-id-input'
                         value={shelf_id || 'select' }
                         onChange={(e)=> {setShelf_id(e.target.value)}}
                         >

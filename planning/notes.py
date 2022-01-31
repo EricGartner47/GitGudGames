@@ -156,7 +156,16 @@ of your Heroku app in the url and tag name:
    docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
    ```
 
-
-
+persona - Shadow Kanji Boss Fight
+civ6 - Seondeok, going for science
+halo - 343 Guilty Spark - Legendary
+jade empire - Chapter 3 - closed fist run
+into the breach - 2nd Island - Zenith Guard
+Mass effect 2 - Cool Space Opera
+Witcher 3 - Hearts of Stone - Blood and Broken Bones
+Dead Space - Chapter 7: Into The Void
+Portal - The cake is a lie
+Terraria - Looks like a fun sandbox
+Doom - NEDM 
 
 '''
