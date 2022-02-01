@@ -101,7 +101,7 @@ const Homepage = () => {
                                 </tr>
                                 <tr>
                                     <td>
-                                        Insrycption
+                                        Inscryption
                                     </td>
                                     <td>
                                         Puzzler
