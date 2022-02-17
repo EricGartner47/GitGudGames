@@ -30,3 +30,5 @@ const Search = ({ searchQuery, setSearchQuery }) => {
 };
 
 export default Search;
+
+//test
