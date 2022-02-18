@@ -9,6 +9,9 @@ const Homepage = () => {
     const user = useSelector(state => state.session.user);
     const userGames = useSelector(state => state.games);
     const games = Object.values(userGames)
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = useState(query || '');
     const dispatch = useDispatch()
 
     if(!user){
@@ -36,7 +39,10 @@ const Homepage = () => {
                         <Link to="/app/games">My Games</Link>
                     </div>
                     <div>
-                        <Userbar />
+                        <Userbar
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                        />
                     </div>
                 </div>
                 <section id="progress-tracker">
