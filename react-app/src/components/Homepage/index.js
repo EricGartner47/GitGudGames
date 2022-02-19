@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, NavLink, Link } from 'react-router-dom';
 import { loadGames } from '../../store/games';
 import Userbar from '../Userbar';
+import Search from '../SearchBar';
 import './Homepage.css'
 
 const Homepage = () => {
@@ -32,6 +33,12 @@ const Homepage = () => {
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                         </NavLink>
                     </div>
+                    <div>
+                        <Search
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                        />
+                    </div>
                     <div id='my-shelves-link'>
                         <Link to="/app/shelves">My Shelves</Link>
                     </div>
@@ -39,10 +46,7 @@ const Homepage = () => {
                         <Link to="/app/games">My Games</Link>
                     </div>
                     <div>
-                        <Userbar
-                            searchQuery={searchQuery}
-                            setSearchQuery={setSearchQuery}
-                        />
+                        <Userbar  />
                     </div>
                 </div>
                 <section id="progress-tracker">

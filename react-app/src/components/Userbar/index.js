@@ -9,12 +9,6 @@ const Userbar = ({ searchQuery, setSearchQuery }) => {
 
     return (
         <nav id="userbar">
-            <div id='search-bar'>
-                <Search
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-                />
-            </div>
             <div id='userProfile'>
                 <span>{user.username}</span>
             </div>
