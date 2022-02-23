@@ -9,11 +9,11 @@ import './Homepage.css'
 const Homepage = () => {
     const user = useSelector(state => state.session.user);
     const userGames = useSelector(state => state.games);
-    const games = Object.values(userGames)
+    const games = Object.values(userGames);
     const { search } = window.location;
     const query = new URLSearchParams(search).get('s');
     const [searchQuery, setSearchQuery] = useState(query || '');
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     if(!user){
         <Redirect to="/" />
@@ -21,6 +21,18 @@ const Homepage = () => {
     useEffect(()=> {
         dispatch(loadGames(user))
     },[])
+
+    const filterGames = (games, query) => {
+        if (!query) {
+            return games;
+        }
+
+        return games.filter((game) => {
+            const gameName = game.title.toLowerCase();
+            return gameName.includes(query)
+        })
+    }
+    const filteredGames = filterGames(games, searchQuery);
 
     const currentGames = games.filter(game => game.shelf_id === 2)
 
@@ -82,57 +94,68 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div id='suggested-games-container'>
-                        <h3>Suggested Games</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>
-                                        Title
-                                    </th>
-                                    <th>
-                                        Genre
-                                    </th>
-                                    <th>
-                                        Average Rating
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Sekiro: Shadows Die Twice
-                                    </td>
-                                    <td>
-                                        Adventure
-                                    </td>
-                                    <td>
-                                        4.5
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Inscryption
-                                    </td>
-                                    <td>
-                                        Puzzler
-                                    </td>
-                                    <td>
-                                        4.8
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        METAL GEAR SOLID V: PHANTOM PAIN
-                                    </td>
-                                    <td>
-                                        Sandbox
-                                    </td>
-                                    <td>
-                                        5
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        {filteredGames? filteredGames.map(game => (
+                            <>
+                                <h3>Search Results</h3>
+                                <table>
+
+                                </table>
+                            </>
+                        )) :
+                            <>
+                                <h3>Suggested Games</h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Title
+                                            </th>
+                                            <th>
+                                                Genre
+                                            </th>
+                                            <th>
+                                                Average Rating
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Sekiro: Shadows Die Twice
+                                            </td>
+                                            <td>
+                                                Adventure
+                                            </td>
+                                            <td>
+                                                4.5
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Inscryption
+                                            </td>
+                                            <td>
+                                                Puzzler
+                                            </td>
+                                            <td>
+                                                4.8
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                METAL GEAR SOLID V: PHANTOM PAIN
+                                            </td>
+                                            <td>
+                                                Sandbox
+                                            </td>
+                                            <td>
+                                                5
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </>
+                        }
                     </div>
                 </section>
             </main>
@@ -144,5 +167,3 @@ const Homepage = () => {
 }
 
 export default Homepage;
-
-//test
