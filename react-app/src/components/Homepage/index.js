@@ -98,7 +98,30 @@ const Homepage = () => {
                             <>
                                 <h3>Search Results</h3>
                                 <table>
-
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Title
+                                            </th>
+                                            <th>
+                                                Genre
+                                            </th>
+                                            <th>
+                                                Rating
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {game.title}
+                                            </td>
+                                            <td>
+                                                {game.genre}
+                                            </td>
+                                            <td>
+                                                {game.rating}
+                                            </td>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </>
                         )) :
