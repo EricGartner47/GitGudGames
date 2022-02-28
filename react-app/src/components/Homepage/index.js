@@ -94,7 +94,8 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div id='suggested-games-container'>
-                        {filteredGames? filteredGames.map(game => (
+                        {filteredGames? filteredGames.map(game => {
+                            return (
                             <>
                                 <h3>Search Results</h3>
                                 <table>
@@ -110,7 +111,7 @@ const Homepage = () => {
                                                 Rating
                                             </th>
                                         </tr>
-                                        <tr>
+                                        <tr key={game.id}>
                                             <td>
                                                 {game.title}
                                             </td>
@@ -124,7 +125,7 @@ const Homepage = () => {
                                     </thead>
                                 </table>
                             </>
-                        )) :
+                        )}) :
                             <>
                                 <h3>Suggested Games</h3>
                                 <table>
