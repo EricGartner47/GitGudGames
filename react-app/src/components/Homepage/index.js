@@ -45,12 +45,12 @@ const Homepage = () => {
                             <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/690/996/f6d.png" alt="" id="gitgud-img"></img>
                         </NavLink>
                     </div>
-                    <div>
+                    {/* <div>
                         <Search
                             searchQuery={searchQuery}
                             setSearchQuery={setSearchQuery}
                         />
-                    </div>
+                    </div> */}
                     <div id='my-shelves-link'>
                         <Link to="/app/shelves">My Shelves</Link>
                     </div>
@@ -94,38 +94,39 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div id='suggested-games-container'>
-                        {filteredGames? filteredGames.map(game => {
-                            return (
-                            <>
-                                <h3>Search Results</h3>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                Title
-                                            </th>
-                                            <th>
-                                                Genre
-                                            </th>
-                                            <th>
-                                                Rating
-                                            </th>
-                                        </tr>
-                                        <tr key={game.id}>
-                                            <td>
-                                                {game.title}
-                                            </td>
-                                            <td>
-                                                {game.genre}
-                                            </td>
-                                            <td>
-                                                {game.rating}
-                                            </td>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </>
-                        )}) :
+                        {
+                        // filteredGames? filteredGames.map(game => {
+                        //     return (
+                        //     <>
+                        //         <h3>Search Results</h3>
+                        //         <table>
+                        //             <thead>
+                        //                 <tr>
+                        //                     <th>
+                        //                         Title
+                        //                     </th>
+                        //                     <th>
+                        //                         Genre
+                        //                     </th>
+                        //                     <th>
+                        //                         Rating
+                        //                     </th>
+                        //                 </tr>
+                        //                 <tr key={game.id}>
+                        //                     <td>
+                        //                         {game.title}
+                        //                     </td>
+                        //                     <td>
+                        //                         {game.genre}
+                        //                     </td>
+                        //                     <td>
+                        //                         {game.rating}
+                        //                     </td>
+                        //                 </tr>
+                        //             </thead>
+                        //         </table>
+                        //     </>
+                        // )}) :
                             <>
                                 <h3>Suggested Games</h3>
                                 <table>
