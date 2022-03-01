@@ -10,9 +10,9 @@ const Homepage = () => {
     const user = useSelector(state => state.session.user);
     const userGames = useSelector(state => state.games);
     const games = Object.values(userGames);
-    const { search } = window.location;
-    const query = new URLSearchParams(search).get('s');
-    const [searchQuery, setSearchQuery] = useState(query || '');
+    // const { search } = window.location;
+    // const query = new URLSearchParams(search).get('s');
+    // const [searchQuery, setSearchQuery] = useState(query || '');
     const dispatch = useDispatch();
 
     if(!user){
@@ -22,17 +22,17 @@ const Homepage = () => {
         dispatch(loadGames(user))
     },[])
 
-    const filterGames = (games, query) => {
-        if (!query) {
-            return games;
-        }
+    // const filterGames = (games, query) => {
+    //     if (!query) {
+    //         return games;
+    //     }
 
-        return games.filter((game) => {
-            const gameName = game.title.toLowerCase();
-            return gameName.includes(query)
-        })
-    }
-    const filteredGames = filterGames(games, searchQuery);
+    //     return games.filter((game) => {
+    //         const gameName = game.title.toLowerCase();
+    //         return gameName.includes(query)
+    //     })
+    // }
+    // const filteredGames = filterGames(games, searchQuery);
 
     const currentGames = games.filter(game => game.shelf_id === 2)
 
