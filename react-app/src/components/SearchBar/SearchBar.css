@@ -19,8 +19,6 @@
 
 #header-search {
   width: 100%;
-  /* padding: 10px 35px 10px 15px;
-  border: none; */
   padding: 3px;
   border-radius: 100px;
   outline: none;
@@ -37,4 +35,9 @@
   width: 20px;
   height: 20px;
   object-fit: cover;
+}
+
+#search-bar-container {
+  display: flex;
+  width: 100%;
 }
