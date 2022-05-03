@@ -137,7 +137,8 @@ const GamePage = () => {
                             )}
                         </table>
                     </div>
-                    <div id="create-game-container">
+                    <div id="create-game-container"
+                    >
                         <h5>Create Game</h5>
                         <i className="fas fa-plus-square" onClick={()=> setShowCreateForm(true)}></i>
                             {showCreateForm && (
@@ -155,5 +156,3 @@ const GamePage = () => {
 }
 
 export default GamePage;
-
-//test

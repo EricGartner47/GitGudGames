@@ -10,25 +10,25 @@ const Search = ({ searchQuery, setSearchQuery }) => {
     };
 
     return (
-        <form action="/app" method="get" onSubmit={onSubmit} id="search-form">
-            <label htmlFor="header-search">
-                <span className="visually-hidden"></span>
-            </label>
-            <input
-                value={searchQuery}
-                onInput={(e) => setSearchQuery(e.target.value)}
-                type="text"
-                id="header-search"
-                name="s"
-            >
-            </input>
-            <button type="submit" className="search-button">
-                <i className="fas fa-search" id='search_icon'></i>
-            </button>
-        </form>
+        <div id='search-bar-container'>
+            <form action="/app" method="get" onSubmit={onSubmit} id="search-form">
+                <label htmlFor="header-search">
+                    <span className="visually-hidden"></span>
+                </label>
+                <input
+                    value={searchQuery}
+                    onInput={(e) => setSearchQuery(e.target.value)}
+                    type="text"
+                    id="header-search"
+                    name="s"
+                >
+                </input>
+                <button type="submit" className="search-button">
+                    <i className="fas fa-search" id='search_icon'></i>
+                </button>
+            </form>
+        </div>
     );
 };
 
 export default Search;
-
-//test
