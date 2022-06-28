@@ -28,6 +28,55 @@ def user(id):
     user = User.query.get(id)
     return user.to_dict()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 # #shelf routes
 # @user_routes.route('/<int:id>/shelves')
 # @login_required
